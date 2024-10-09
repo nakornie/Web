@@ -1,0 +1,114 @@
+/*Parties principales*/
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header, footer {
+    background-color: #960151;
+    color: white;
+    text-align: center;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+}
+
+main {
+    background-color: #FFEAFD;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+}
+
+/*Éléments de base*/
+a {
+    text-decoration: none;
+    color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: calc(0.5em + 0.5vw);
+}
+
+h1 {
+    font-size: 1.9em;
+}
+
+h2 {
+    font-size: 1.7em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+/********************************************************************************/
+/*Page d'accueil*/
+/********************************************************************************/
+/*Icones des jeux en page principale*/
+.icone {
+    width: 20vw;
+    height: auto;
+    min-width: 80px;
+    box-shadow: 10px 10px 15px black;
+}
+
+.icone:hover {
+    transform: scale(1.2);
+}
+
+.icones_row {
+    height: fit-content;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: min(15vw, 20px); 
+
+    padding: 20px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+}
+
+/********************************************************************************/
+/*Pages de jeux*/
+/********************************************************************************/
+/*Remplace la zone de jeu*/
+.remplacement {
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+
+/**
+ * Mise en forme des éléments de la zone principale
+*/
+.toCenterPlayground {
+    display: flex;
+    justify-content: center;
+}
+
+.playground {
+    width: max(100px, 50vw);
+    text-align: center;
+}
+
+/*Baniières pour règles des jeux*/
+.banniere {
+    margin-left: auto;
+    margin-right: auto;
+
+    height: fit-content;
+    padding: 1%;
+
+    text-align: center;
+    background-color: #FFFDFF;
+    border: solid 10px #960151;
+    border-radius: 50px 0px 50px 0px;
+}
+
+h1.banniere {
+    width: 50%;
+}
+
+h2.banniere {
+    width: 40%;
+}
