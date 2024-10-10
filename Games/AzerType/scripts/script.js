@@ -39,11 +39,8 @@ function gameLoop() {
     console.log("Enter gameloop");
 
     let validateButton = document.getElementById("btnValiderMot");
-    // let validateButton = document.getElementById("btnStartGame");
-    // validateButton.removeEventListener("click"); // Ensure we start fresh
 
-
-    validateButton.addEventListener("click", () => {
+    validateButton.addEventListener("click", function buttonLoop() {
         // Gets the player's input
         let inputElement = document.getElementById("inputEcriture");
         let input = inputElement.value;
@@ -58,18 +55,42 @@ function gameLoop() {
         i++;
 
         // Check if we reached the end of the list
-        if (i >= gameList.length) {
-            validateButton.disabled = true; // Disable button
+        console.log("Element : ", i, gameList.length);
+        if (i === gameList.length) {
             displayProposition("Fin du jeu !!!"); // Display end message
+            validateButton.innerText = "Recommencer";
+            validateButton.removeEventListener("click", buttonLoop);
+            resetGame();
         } else {
-            // Displays the next proposition to write
-            displayProposition(gameList[i]);
+            displayProposition(gameList[i]); // Displays the next proposition to write
         }
 
         // Empties the input area and display the score
         inputElement.value = "";
         displayResults(score, i);
     })
+}
+
+// Function to handle game reset
+function resetGame() {
+    console.log("Prepare to reset game")
+    let validateButton = document.getElementById("btnValiderMot");
+    validateButton.innerText = "Recommencer";
+    validateButton.id = "btnStartGame"; // Reset button ID for next start
+
+    // Restart game setup
+    validateButton.addEventListener("click", function buttonResetGame(){
+        console.log("Reset game")
+        // Reset game settings
+        i = 0;
+        score = 0;
+        validateButton.innerText = "Commencer";
+        displayProposition("AzerType");
+        displayResults(score, i);
+        ableRadioButtons();
+        validateButton.removeEventListener("click", buttonResetGame);
+        startGame();
+    }, { once: true })
 }
 
 // Prepares the game
@@ -94,11 +115,12 @@ function startGame() {
     // The <Start> button vecomes a <Validate> one
     // The game loop is launched
     let startButton = document.getElementById("btnStartGame");
-    startButton.addEventListener("click", () => {
+    startButton.addEventListener("click", function buttonStartGame() {
         disableRadioButtons()
         displayProposition(gameList[0]);
         startButton.innerText = "Valider";
         startButton.id = "btnValiderMot";
+        startButton.removeEventListener("click", buttonStartGame);
         gameLoop();
-    }, { once: true });
+    }, { once: true }); // The startButton can only be clicked once
 }
