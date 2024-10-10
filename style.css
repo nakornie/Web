@@ -1,4 +1,6 @@
-/*Parties principales*/
+/********************************************************************************/
+/*Parties principale*/
+/********************************************************************************/
 * {
     margin: 0;
     box-sizing: border-box;
@@ -41,6 +43,46 @@ h2 {
 }
 
 /********************************************************************************/
+/*Menu de navigation*/
+/********************************************************************************/
+/* Style de base pour la barre de navigation */
+nav {
+    padding: 10px;
+}
+
+/* Styles pour la liste non ordonnée */
+nav ul {
+    list-style-type: none; /* Supprime les puces par défaut */
+    padding: 0; /* Supprime le padding par défaut */
+    margin: 0; /* Supprime la marge par défaut */
+    display: flex; /* Utilise Flexbox pour aligner les éléments horizontalement */
+    justify-content: space-around; /* Espace uniforme entre les éléments */
+}
+
+/* Styles pour chaque élément de la liste */
+nav li {
+    margin: 0 10px; /* Marge entre les éléments (optionnel) */
+    font-weight: 500;
+    font-size: 1.3em;
+}
+
+/* Styles pour les liens */
+nav a {
+    color: white; /* Couleur du texte */
+    text-decoration: none; /* Supprime le soulignement des liens */
+    padding: 10px; /* Espacement interne pour les liens */
+}
+
+/* Changement de couleur lors du survol */
+nav a:hover {
+    background-color: white; /* Couleur de fond au survol */
+    color: #960151;
+    border-radius: 33px; /* Arrondi des coins */
+}
+
+
+
+/********************************************************************************/
 /*Page d'accueil*/
 /********************************************************************************/
 /*Icones des jeux en page principale*/
@@ -50,6 +92,10 @@ h2 {
     min-width: 80px;
     box-shadow: 10px 10px 15px black;
 }
+
+/* .icone alt {
+    color: black;
+} */
 
 .icone:hover {
     transform: scale(1.2);
@@ -107,8 +153,75 @@ h2 {
 
 h1.banniere {
     width: 50%;
+    font-size: 1.8em;
 }
 
 h2.banniere {
     width: 40%;
+    font-size: 1.6em;
+}
+
+
+/********************************************************************************/
+/*Adaptabilité*/
+/********************************************************************************/
+@media screen and (max-width: 600px) {
+    .playground {
+        width: 80vw;
+    }
+
+    h1.banniere {
+        width: 75%;
+        font-size: 1.5em;
+    }
+    
+    h2.banniere {
+        width: 60%;
+        font-size: 1.3em;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    .playground {
+        width: 80vw;
+    }
+
+    h1.banniere {
+        width: 80vw;
+        font-size: 2.5em;
+    }
+    
+    h2.banniere {
+        width: 65vw;
+        font-size: 2.3em;
+    }
+
+    h1 {
+        font-size: 2.8em;
+    }
+    
+    h2 {
+        font-size: 2.6em;
+    }
+    
+    h2 {
+        font-size: 2.4em;
+    }
+
+    p {
+        font-size: 2.2em;
+    }
+
+    input[type="radio"] {
+        min-height: 21px;
+        transform: scale(2); /* Agrandit le bouton */
+        -webkit-transform: scale(2); /* Pour compatibilité avec certains anciens navigateurs */
+        -moz-transform: scale(2); /* Compatibilité avec Firefox */
+        margin-right: 10px;
+    }
+
+    nav li {
+        font-weight: 500;
+        font-size: 2.6em;
+    }
 }

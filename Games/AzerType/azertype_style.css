@@ -7,45 +7,98 @@
     box-sizing: border-box;
 }
 
-/* Mise en forme des formulaires */
-input[type='radio'] {
-    filter: grayscale(1); /* Grayscale passe le bouton en niveau de gris */
+/********************************************************************************/
+/*Playground*/
+/********************************************************************************/
+.playground {
+    margin: 5vw;
+    padding: 5vw;
+
+    color: white;
+
+    background-color: #960151;
+    border-radius: 20px;
 }
 
+.playground p {
+    font-size: 1.5em;
+}
 
-input[type='text'],
-input[type='email'] {
+/********************************************************************************/
+/*Zone d'option*/
+/********************************************************************************/
+label {
+    font-size: 1.3em;
+}
+
+.optionSource {
+    margin: 20px;
+}
+
+input[type="radio"] {
+    min-width: 15px;
+    min-height: 15px;
+    width: auto;
+    height: auto;
+}
+
+.optionSource input[type='radio']:not(:first-child) {
+    margin-left: 20px;
+}
+
+/* Zone ou sera affiché le texte à afficher */
+.zoneProposition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
+    margin: 10px 0 10px 0;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: black;
+}
+
+/********************************************************************************/
+/*Zone de saisie, avec bouton et score*/
+/********************************************************************************/
+/* Zone de saisie */
+.zoneSaisie {
+    color: black;
+
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+
+    border-radius: 20px;
+}
+
+.zoneSaisie input[type='text'] {
     margin-right: 10px;
+    width: 80%;
+    min-height: 10px;
+    border-radius: 20px;
     padding: 5px;
-    border: none;
-    border-radius: 8px;
-    font-size: 17px;
-    font-weight: 600;
-    font-size: 17px;
-    color: var(--color-primary);
+
+    font-size: 1.3rem;
 }
 
-input[type='text']::placeholder,
-input[type='email']::placeholder {
-    color: var(--color-secondary);
-    opacity: 50%;
-}
+.zoneSaisie button {
+    width: 20%;
+    min-width: 90px;
+    border-radius: 20px;
 
-button {
-    padding: 5px;
-    border: none;
-    border-radius: 8px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    font-size: auto;
-    color: var(--color-secondary);
+    font-size: 0.8em;
+    font-weight: bold;
     background-color: white;
 }
 
 button:hover {
-    color: var(--color-primary);
-    background-color: var(--color-tertiary);
+    color: white;
+    background-color: #960151;
     cursor: pointer;
 }
 
@@ -56,67 +109,31 @@ button:focus {
     
 }
 
-/* Zone d'options */
-.optionSource {
-    margin: 20px;
-}
-
-.optionSource input[type='radio']:not(:first-child) {
-    margin-left: 20px;
-}
-
-/* Zone ou sera affiché le texte (mot ou phrase) à afficher */
-.zoneProposition {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 10px 0 10px 0;
-    padding: 20px;
-    border-radius: 20px;
-    background-color: white;
-    font-size: 1.3em;
-    font-weight: 600;
-    color: black;
-}
-
-/* Zone de saisie */
-.zoneSaisie {
-    color: black;
-
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 30px;
-}
-
-/* Eléments du formulaire de saisie */
-.zoneSaisie input[type='text'] {
-    width: 80%;
-}
-
-.zoneSaisie button {
-    width: 20%;
-}
-
 .zoneScore {
-    font-size: 20px;
+    font-size: 1.3em;
 }
 
-.zonePartage {
-    padding-top: 20px;
+/********************************************************************************/
+/*Adaptabilité*/
+/********************************************************************************/
+@media screen and (max-width: 600px) {
+    
 }
 
-.playground {
-    margin: 5vw;
-    padding: 5vw;
+@media screen and (min-width: 1800px) {
+    .zoneOptions, .zoneProposition, .zoneScore {
+        font-size: 2.3em;
+    }
 
-    color: white;
-
-    background-color: #960151;
-    border-radius: 33px 33px 33px 33px;
-}
-
-.playground p {
-    font-size: 1.5em;
+    .zoneSaisie input[type='text'] {
+        width: 80%;
+        font-size: 2.3em;
+    }
+    
+    .zoneSaisie button {
+        width: 20%;
+        min-width: 90px;
+    
+        font-size: 2em;
+    }
 }
