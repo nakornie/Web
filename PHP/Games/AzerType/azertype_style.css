@@ -1,0 +1,142 @@
+/**
+ * Reset
+ */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/********************************************************************************/
+/*Playground*/
+/********************************************************************************/
+.playground {
+    margin: 5vw;
+    padding: 5vw;
+
+    color: white;
+
+    background-color: #960151;
+    border-radius: 20px;
+}
+
+.playground p {
+    font-size: 1.5em;
+}
+
+/********************************************************************************/
+/*Zone d'option*/
+/********************************************************************************/
+label {
+    font-size: 1.3em;
+}
+
+.optionSource {
+    margin: 20px;
+}
+
+input[type="radio"] {
+    min-width: 15px;
+    min-height: 15px;
+    width: auto;
+    height: auto;
+}
+
+.optionSource input[type='radio']:not(:first-child) {
+    margin-left: 20px;
+}
+
+/* Zone ou sera affiché le texte à afficher */
+.zoneProposition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 10px 0 10px 0;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: black;
+}
+
+/********************************************************************************/
+/*Zone de saisie, avec bouton et score*/
+/********************************************************************************/
+/* Zone de saisie */
+.zoneSaisie {
+    color: black;
+
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+
+    border-radius: 20px;
+}
+
+.zoneSaisie input[type='text'] {
+    margin-right: 10px;
+    width: 80%;
+    min-height: 10px;
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+    font-size: 1.3rem;
+}
+
+.zoneSaisie button {
+    width: 20%;
+    min-width: 100px;
+    border-radius: 20px;
+    border: none;
+
+    font-size: 0.8em;
+    font-weight: bold;
+    background-color: white;
+}
+
+button:hover {
+    color: white;
+    background-color: #960151;
+    cursor: pointer;
+}
+
+button:focus {
+    background-color: var(--color-tertiary);
+    border: 3px solid var(--color-primary);
+    padding: 2px;
+    
+}
+
+.zoneScore {
+    /* margin-top: 3vw; */
+    font-size: 1.3em;
+    line-height: 170%;
+}
+
+/********************************************************************************/
+/*Adaptabilité*/
+/********************************************************************************/
+@media screen and (max-width: 600px) {
+    
+}
+
+@media screen and (min-width: 1800px) {
+    .zoneOptions, .zoneProposition, .zoneScore {
+        font-size: 2.3em;
+    }
+
+    .zoneSaisie input[type='text'] {
+        width: 80%;
+        font-size: 2.3em;
+    }
+    
+    .zoneSaisie button {
+        width: 20%;
+        min-width: 90px;
+    
+        font-size: 2em;
+    }
+}
