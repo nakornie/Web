@@ -88,7 +88,7 @@ input[type="radio"] {
 
 .zoneSaisie button {
     width: 20%;
-    min-width: 90px;
+    min-width: 100px;
     border-radius: 20px;
     border: none;
 
@@ -111,7 +111,9 @@ button:focus {
 }
 
 .zoneScore {
+    /* margin-top: 3vw; */
     font-size: 1.3em;
+    line-height: 170%;
 }
 
 /********************************************************************************/

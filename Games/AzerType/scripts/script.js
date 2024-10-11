@@ -1,6 +1,23 @@
 let i = 0;
 let score = 0;
 let gameList = words;
+let time = 0;
+let timerRunning = false;
+
+function addSecond() {
+    if (timerRunning) {
+        let timer = document.querySelector(".zoneScore #timer");
+        let minutes = parseInt(time / 60, 10);
+        let secondes = parseInt(time % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        secondes = secondes < 10 ? "0" + secondes : secondes;
+
+        timer.innerText = minutes + ":" + secondes;
+        time++;
+    }
+    
+}
 
 // Activates the radio buttons used to slect the level
 function ableRadioButtons() {
@@ -30,12 +47,14 @@ function displayProposition(proposition) {
 // Displays the score in the following manners : number of words well writen / number of words proposed
 function displayResults(score, nbTries) {
     console.log("Display result : ", score, " / ", nbTries);
-    let zoneScore = document.querySelector(".zoneScore span");
+    let zoneScore = document.querySelector(".zoneScore #score");
     zoneScore.innerText = `${score} / ${nbTries}`;
 }
 
 // The main function during the game
 function gameLoop() {
+    setInterval(addSecond, 1000);
+
     console.log("Enter gameloop");
 
     let validateButton = document.getElementById("btnValiderMot");
@@ -57,6 +76,7 @@ function gameLoop() {
         // Check if we reached the end of the list
         console.log("Element : ", i, gameList.length);
         if (i === gameList.length) {
+            timerRunning = false;
             displayProposition("Fin du jeu !!!"); // Display end message
             validateButton.innerText = "Recommencer";
             validateButton.removeEventListener("click", buttonLoop);
@@ -84,7 +104,12 @@ function resetGame() {
         // Reset game settings
         i = 0;
         score = 0;
+        time = 0;
+
         validateButton.innerText = "Commencer";
+
+        let timer = document.querySelector(".zoneScore #timer");
+        timer.innerText = "00:00";
         displayProposition("AzerType");
         displayResults(score, i);
         ableRadioButtons();
@@ -121,6 +146,7 @@ function startGame() {
         startButton.innerText = "Valider";
         startButton.id = "btnValiderMot";
         startButton.removeEventListener("click", buttonStartGame);
+        timerRunning = true;
         gameLoop();
     }, { once: true }); // The startButton can only be clicked once
 }

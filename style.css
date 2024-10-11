@@ -42,6 +42,14 @@ h2 {
     font-size: 1.5em;
 }
 
+p, ul {
+    font-size: 1.3em;
+    text-align: center;
+    list-style-type: none;
+
+    margin: 3vw;
+}
+
 /********************************************************************************/
 /*Menu de navigation*/
 /********************************************************************************/
@@ -92,10 +100,6 @@ nav a:hover {
     min-width: 80px;
     box-shadow: 10px 10px 15px black;
 }
-
-/* .icone alt {
-    color: black;
-} */
 
 .icone:hover {
     transform: scale(1.2);
@@ -165,6 +169,12 @@ h2.banniere {
 /********************************************************************************/
 /*Adaptabilité*/
 /********************************************************************************/
+@media screen and (max-width: 350px){
+    .banniere {
+        padding: 3%;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .playground {
         width: 80vw;
@@ -172,12 +182,18 @@ h2.banniere {
 
     h1.banniere {
         width: 75%;
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
     
     h2.banniere {
         width: 60%;
-        font-size: 1.3em;
+        font-size: 1.2em;
+    }
+
+    p, ul {
+        margin: 5vw;
+        font-size: 1.2em;
+        text-align: justify;
     }
 }
 
@@ -188,12 +204,12 @@ h2.banniere {
 
     h1.banniere {
         width: 80vw;
-        font-size: 2.5em;
+        font-size: 2.8em;
     }
     
     h2.banniere {
         width: 65vw;
-        font-size: 2.3em;
+        font-size: 2.6em;
     }
 
     h1 {
@@ -204,12 +220,12 @@ h2.banniere {
         font-size: 2.6em;
     }
     
-    h2 {
+    h3 {
         font-size: 2.4em;
     }
 
-    p {
-        font-size: 2.2em;
+    p, ul {
+        font-size: 2.4em;
     }
 
     input[type="radio"] {
