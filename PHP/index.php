@@ -1,11 +1,10 @@
+<?php
+    $gameName = "Home";
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nako's playground</title>
-        <link href="style.css" rel="stylesheet">
-    </head>
+    <?php require_once(__DIR__ . '/inclusions/head.php'); ?>
 
     <body>
         <header>
@@ -61,8 +60,6 @@
             </div>
         </main>
 
-        <footer>
-            <p>Pour toutes réclamations regardant la qualité du site... Essayez voir, je vous regarde : )</p>
-        </footer>
+        <?php require_once(__DIR__ . '/inclusions/footer.php'); ?>
     </body>
 </html>

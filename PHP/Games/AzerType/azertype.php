@@ -1,38 +1,13 @@
-<!--
-Ceci est un mini projet développé en suivant le cour :
-"Apprenez à programmer avec JavaScript"
-de la platforme OpenClassrooms. 
--->
+<?php 
+    $gameName = "AzerType";
+?>
 
 <!DOCTYPE HTML>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <title>AzerType</title>
-        <link href="../../style.css" rel="stylesheet">
-        <link href="azertype_style.css" rel="stylesheet">
-        <script src="scripts/config.js" defer></script>
-        <script src="scripts/popup.js" defer></script>
-        <script src="scripts/script.js" defer></script>
-        <script src="scripts/main.js" defer></script>
-    </head>
+    <?php require_once(__DIR__ . '/../../inclusions/head.php'); ?>
 
     <body>
-        <header>
-            <h1>Jeux AzerType</h1>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="../../index.php">Accueil</a>
-                    </li>
-                    <li>
-                        <a href="#Règles_AzerType">Règles</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+    <?php require_once(__DIR__ . '/../../inclusions/header.php'); ?>
 
         <main>
             <div class="toCenterPlayground">
@@ -64,7 +39,7 @@ de la platforme OpenClassrooms.
                 </div>
             </div>
 
-            <h1 id="Règles_AzerType" class="banniere">Règles du jeu</h1>
+            <h1 id="règles" class="banniere">Règles du jeu</h1>
             <h2 class="banniere">But du jeu</h2>
             <p>
                 Le but du jeu est simple : gagner un maximum de point en un minimum de temps !
@@ -86,8 +61,6 @@ de la platforme OpenClassrooms.
             </ul>
         </main>
 
-        <footer>
-            <p>Pour toutes réclamations regardant la qualité du site... Essayez voir, je vous regarde : )</p>
-        </footer>
+        <?php require_once(__DIR__ . '/../../inclusions/footer.php'); ?>
     </body>
 </html>

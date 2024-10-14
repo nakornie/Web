@@ -50,6 +50,11 @@ p, ul {
     margin: 3vw;
 }
 
+header h1 {
+    margin-top: 5vw;
+    font-size: 2.2em;
+}
+
 /********************************************************************************/
 /*Menu de navigation*/
 /********************************************************************************/
@@ -150,7 +155,7 @@ nav a:hover {
     padding: 1%;
 
     text-align: center;
-    background-color: #FFFDFF;
+    background-color: rgba(250, 250, 250, 90);
     border: solid 10px #960151;
     border-radius: 50px 0px 50px 0px;
 }
@@ -197,7 +202,28 @@ h2.banniere {
     }
 }
 
-@media screen and (min-width: 1800px) {
+@media screen and (min-width: 1300px) {
+    h1 {
+        font-size: 3em;
+    }
+    
+    h2 {
+        font-size: 2.8em;
+    }
+    
+    h3 {
+        font-size: 2.6em;
+    }
+
+    p, ul {
+        font-size: 2.4em;
+    }
+
+    header h1 {
+        margin-top: 4vw;
+        font-size: 3.5em;
+    }
+
     .playground {
         width: 80vw;
     }
@@ -212,32 +238,11 @@ h2.banniere {
         font-size: 2.6em;
     }
 
-    h1 {
-        font-size: 2.8em;
-    }
-    
-    h2 {
-        font-size: 2.6em;
-    }
-    
-    h3 {
-        font-size: 2.4em;
-    }
-
-    p, ul {
-        font-size: 2.4em;
-    }
-
     input[type="radio"] {
         min-height: 21px;
         transform: scale(2); /* Agrandit le bouton */
         -webkit-transform: scale(2); /* Pour compatibilité avec certains anciens navigateurs */
         -moz-transform: scale(2); /* Compatibilité avec Firefox */
         margin-right: 10px;
-    }
-
-    nav li {
-        font-weight: 500;
-        font-size: 2.6em;
     }
 }
