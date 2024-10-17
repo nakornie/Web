@@ -136,7 +136,7 @@ nav a:hover {
 /**
  * Mise en forme des éléments de la zone principale
 */
-.toCenterPlayground {
+.toCenterContent {
     display: flex;
     justify-content: center;
 }

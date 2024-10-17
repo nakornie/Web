@@ -1,16 +1,17 @@
 <?php 
-    $gameName = "AzerType";
+    $pageName = "AzerType";
+    $rootPath = "../../";
 ?>
 
 <!DOCTYPE HTML>
 <html lang="fr">
-    <?php require_once(__DIR__ . '/../../inclusions/head.php'); ?>
+    <?php require_once(__DIR__ . '/' . $rootPath . 'Inclusions/head.php'); ?>
 
     <body>
-    <?php require_once(__DIR__ . '/../../inclusions/header.php'); ?>
+    <?php require_once(__DIR__ . '/' . $rootPath . 'Inclusions/header.php'); ?>
 
         <main>
-            <div class="toCenterPlayground">
+            <div class="toCenterContent">
                 <div class="playground">
                     <div class="zoneOptions">
                         <p>Choisissez votre option et tapez la proposition qui s'affiche dans le champ en-dessous.</p>
@@ -61,6 +62,6 @@
             </ul>
         </main>
 
-        <?php require_once(__DIR__ . '/../../inclusions/footer.php'); ?>
+        <?php require_once(__DIR__ . '/' . $rootPath . 'Inclusions/footer.php'); ?>
     </body>
 </html>

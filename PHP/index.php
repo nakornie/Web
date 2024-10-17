@@ -1,16 +1,17 @@
 <?php
-    $gameName = "Home";
+    $pageName = "Home";
+    // Pour PHP (inclure des fichiers)
+    $fileRootPath = __DIR__ . '/';  // Chemin de fichiers, basé sur le dossier actuel
+    // Pour les URLs HTML (liens)
+    $rootPath = '/webgames/';  // Chemin relatif pour les liens HTML
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
-    <?php require_once(__DIR__ . '/inclusions/head.php'); ?>
+    <?php require_once($fileRootPath . 'Inclusions/head.php'); ?>
 
     <body>
-        <header>
-            <h1>Bienvenue !</h1>
-            <h2>Choisissez un jeu, et amusez vous !</h2>
-        </header>
+        <?php require_once($fileRootPath . 'Inclusions/header.php'); ?>
 
         <main>
             <h1 id="jeux_solo">Jeux Solo</h1>
@@ -60,6 +61,6 @@
             </div>
         </main>
 
-        <?php require_once(__DIR__ . '/inclusions/footer.php'); ?>
+        <?php require_once($fileRootPath . 'Inclusions/footer.php'); ?>
     </body>
 </html>

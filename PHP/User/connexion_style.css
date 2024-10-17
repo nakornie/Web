@@ -1,0 +1,126 @@
+/**
+ * Reset
+ */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/********************************************************************************/
+/*Formulaire*/
+/********************************************************************************/
+form {
+    width: max(100px, 50vw);
+    border: none;
+    background-color: #960151;
+    color: white;
+
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    padding: 2w;
+
+    text-align: center;
+    font-size: 1.6em;
+
+    border-radius: 30px;
+}
+
+/********************************************************************************/
+/*Choix de la connexion*/
+/********************************************************************************/
+fieldset {
+    border: none;
+    margin: 1vw;
+    padding: 1vw;
+}
+
+input[type="radio"] {
+    min-width: 15px;
+    min-height: 15px;
+    width: auto;
+    height: auto;
+}
+
+.authMode {
+    margin-top: 3vw;
+    padding: 1vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2vw;
+}
+
+/********************************************************************************/
+/*Remplissage*/
+/********************************************************************************/
+input[type='text'], input[type='password'] {
+    width: 75%;
+    min-height: 5px;
+
+    border-radius: 20px;
+    border: none;
+
+    background-color: rgba(250,250,250,90);
+
+    margin-top: 1vw;
+    padding: 5px;
+    font-size: 1em;
+}
+
+button {
+    width: 20%;
+    min-width: 100px;
+    border-radius: 20px;
+    border: solid #960151;
+
+    margin-top: 2vw;
+    margin-bottom: 3vw;
+    padding: 1vw;
+
+    font-size: 0.8em;
+    font-weight: bold;
+    background-color: rgba(250,250,250,90);
+}
+
+button:hover {
+    color: white;
+    background-color: #960151;
+    border: solid white;
+    cursor: pointer;
+}
+
+/********************************************************************************/
+/*Adaptabilité*/
+/********************************************************************************/
+@media screen and (max-width: 600px) {
+    form {
+        width: 75vw;
+        font-size: 1.4em;
+        padding: 5vw;
+    }
+
+    fieldset {
+        margin: 2vw;
+        padding: 1vw;
+    }
+
+    input[type='text'], input[type='password'] {    
+        margin-top: 2vw;
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    form {
+        font-size: 3.6rem;
+        font-weight: 500;
+    }
+
+    input[type='text'], input[type='password'] {    
+        font-size: 3rem;
+        padding: 0.9vw;
+    }
+}
