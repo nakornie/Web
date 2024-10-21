@@ -5,7 +5,7 @@
     <?php
         echo "<title>{$pageName}</title>";
 
-        echo '<link href="' . $rootPath . 'style.css" rel="stylesheet">';
+        echo '<link href="' . $rootPath . '/style.css" rel="stylesheet">';
         echo '<link href="' . strtolower($pageName) . '_style.css" rel="stylesheet">';
         
         if ($pageName != "Home") {
@@ -13,6 +13,5 @@
             echo '<script src="scripts/script.js" defer></script>';
             echo '<script src="scripts/main.js" defer></script>';
         }
-        
     ?>
 </head>

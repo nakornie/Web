@@ -1,7 +1,7 @@
 <footer>
     <p>
-        Pour toutes réclamations regardant la qualité du site... Essayez voir, je vous regarde : )<br>
+        For any complain regarding the quality of this website, let's see how you fare yourself : )<br>
         ... <br>
-        Ça donne quand même pas trop mal, non ?
+        It's not THAT bad, is it ?
     </p>
 </footer>

@@ -47,7 +47,7 @@ input[type="radio"] {
 }
 
 /* Zone ou sera affiché le texte à afficher */
-.zoneProposition {
+.displayZone {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,7 +65,7 @@ input[type="radio"] {
 /*Zone de saisie, avec bouton et score*/
 /********************************************************************************/
 /* Zone de saisie */
-.zoneSaisie {
+.inputZone {
     color: black;
 
     display: flex;
@@ -76,7 +76,7 @@ input[type="radio"] {
     border-radius: 20px;
 }
 
-.zoneSaisie input[type='text'] {
+.inputZone input[type='text'] {
     margin-right: 10px;
     width: 80%;
     min-height: 10px;
@@ -86,7 +86,7 @@ input[type="radio"] {
     font-size: 1.3rem;
 }
 
-.zoneSaisie button {
+.inputZone button {
     width: 20%;
     min-width: 100px;
     border-radius: 20px;
@@ -110,7 +110,7 @@ button:focus {
     
 }
 
-.zoneScore {
+.scoreZone {
     /* margin-top: 3vw; */
     font-size: 1.3em;
     line-height: 170%;
@@ -124,16 +124,16 @@ button:focus {
 }
 
 @media screen and (min-width: 1800px) {
-    .zoneOptions, .zoneProposition, .zoneScore {
+    .zoneOptions, .displayZone, .scoreZone {
         font-size: 2.3em;
     }
 
-    .zoneSaisie input[type='text'] {
+    .inputZone input[type='text'] {
         width: 80%;
         font-size: 2.3em;
     }
     
-    .zoneSaisie button {
+    .inputZone button {
         width: 20%;
         min-width: 90px;
     

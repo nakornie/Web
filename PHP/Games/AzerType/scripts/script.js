@@ -6,7 +6,7 @@ let timerRunning = false;
 
 function addSecond() {
     if (timerRunning) {
-        let timer = document.querySelector(".zoneScore #timer");
+        let timer = document.querySelector(".scoreZone #timer");
         let minutes = parseInt(time / 60, 10);
         let secondes = parseInt(time % 60, 10);
 
@@ -21,7 +21,6 @@ function addSecond() {
 
 // Activates the radio buttons used to slect the level
 function ableRadioButtons() {
-    console.log("Activates the radio buttons");
     let listOptionButtons = document.querySelectorAll('.optionSource input');
     listOptionButtons.forEach((button) => {
         button.disabled = false;
@@ -30,7 +29,6 @@ function ableRadioButtons() {
 
 // Deactivates the radio buttons used to select the level
 function disableRadioButtons() {
-    console.log("Deactivates the radio buttons");
     let listOptionButtons = document.querySelectorAll('.optionSource input');
     listOptionButtons.forEach((button) => {
         button.disabled = true;
@@ -39,25 +37,21 @@ function disableRadioButtons() {
 
 // Displays the word or sentence to write
 function displayProposition(proposition) {
-    console.log("Display proposition : ", proposition);
-    let zoneProposition = document.querySelector(".zoneProposition");
-    zoneProposition.innerText = proposition;
+    let displayZone = document.querySelector(".displayZone");
+    displayZone.innerText = proposition;
 }
 
 // Displays the score in the following manners : number of words well writen / number of words proposed
 function displayResults(score, nbTries) {
-    console.log("Display result : ", score, " / ", nbTries);
-    let zoneScore = document.querySelector(".zoneScore #score");
-    zoneScore.innerText = `${score} / ${nbTries}`;
+    let scoreZone = document.querySelector(".scoreZone #score");
+    scoreZone.innerText = `${score} / ${nbTries}`;
 }
 
 // The main function during the game
 function gameLoop() {
     setInterval(addSecond, 1000);
 
-    console.log("Enter gameloop");
-
-    let validateButton = document.getElementById("btnValiderMot");
+    let validateButton = document.getElementById("validateButton");
 
     validateButton.addEventListener("click", function buttonLoop() {
         // Gets the player's input
@@ -67,18 +61,16 @@ function gameLoop() {
         // Compares the player's input with the desired proposition
         // Add +1 to score if the input matches the proposition
         // Incrementes the index of the list of propositions
-        console.log("Compare : ", input, gameList[i], i);
         if (gameList[i] === input) {
             score++;
         }
         i++;
 
         // Check if we reached the end of the list
-        console.log("Element : ", i, gameList.length);
         if (i === gameList.length) {
             timerRunning = false;
-            displayProposition("Fin du jeu !!!"); // Display end message
-            validateButton.innerText = "Recommencer";
+            displayProposition("Game Over !!!"); // Display end message
+            validateButton.innerText = "New Game";
             validateButton.removeEventListener("click", buttonLoop);
             resetGame();
         } else {
@@ -93,22 +85,20 @@ function gameLoop() {
 
 // Function to handle game reset
 function resetGame() {
-    console.log("Prepare to reset game")
-    let validateButton = document.getElementById("btnValiderMot");
-    validateButton.innerText = "Recommencer";
+    let validateButton = document.getElementById("validateButton");
+    validateButton.innerText = "New Game";
     validateButton.id = "btnStartGame"; // Reset button ID for next start
 
     // Restart game setup
     validateButton.addEventListener("click", function buttonResetGame(){
-        console.log("Reset game")
         // Reset game settings
         i = 0;
         score = 0;
         time = 0;
 
-        validateButton.innerText = "Commencer";
+        validateButton.innerText = "Start";
 
-        let timer = document.querySelector(".zoneScore #timer");
+        let timer = document.querySelector(".scoreZone #timer");
         timer.innerText = "00:00";
         displayProposition("AzerType");
         displayResults(score, i);
@@ -120,8 +110,6 @@ function resetGame() {
 
 // Prepares the game
 function startGame() {
-    console.log("Enter startGame");
-
     // Choose whether the list used will be words or sentences through radio buttons
     let listOptionButtons = document.querySelectorAll('.optionSource input');
     for (let i = 0; i < listOptionButtons.length; i++) {
@@ -143,8 +131,8 @@ function startGame() {
     startButton.addEventListener("click", function buttonStartGame() {
         disableRadioButtons()
         displayProposition(gameList[0]);
-        startButton.innerText = "Valider";
-        startButton.id = "btnValiderMot";
+        startButton.innerText = "Validate";
+        startButton.id = "validateButton";
         startButton.removeEventListener("click", buttonStartGame);
         timerRunning = true;
         gameLoop();

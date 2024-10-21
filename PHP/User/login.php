@@ -1,5 +1,5 @@
 <?php
-    $pageName = "Connexion";
+    $pageName = "Login";
     $rootPath = "../";
 ?>
 
@@ -12,31 +12,31 @@
 
         <main>
             <div class="toCenterContent">
-                <form id="authMode" action="profil.php" method="POST">
+                <form id="authMode" action="profil.php" method="POST" onsubmit="return validateForm()">
                     <fieldset class="authMode">
                         <label>
-                            <input type="radio" name="authMode" value="login" checked onclick="toggleRegistrationMode()"> Connexion
+                            <input type="radio" name="authMode" value="login" checked onclick="toggleRegistrationMode()"> Login
                         </label>
                         <label>
-                            <input type="radio" name="authMode" value="register" onclick="toggleRegistrationMode()"> Créer un compte
+                            <input type="radio" name="authMode" value="register" onclick="toggleRegistrationMode()"> Create account
                         </label>
                     </fieldset>
 
                     <fieldset>
-                    <label for="username">Nom d'utilisateur :</label><br>
+                    <label for="username">Username :</label><br>
                     <input type="text" id="username" name="username" required>
                     </fieldset>
 
                     <fieldset>
-                    <label for="password">Mot de passe :</label><br>
+                    <label for="password">Password :</label><br>
                     <input type="password" id="password" name="password" required>
                     </fieldset>
 
                     <fieldset id="confirmPasswordField" style="display:none;">
-                        <label for="confirmPassword">Confirmez mot de passe :</label><br>
+                        <label for="confirmPassword">Confirm Password :</label><br>
                         <input type="password" id="confirmPassword" name="confirmPassword">
                     </fieldset>
-                    <button type="submit">Valider</button>
+                    <button type="submit">Validate</button>
                 </form>
             </div>
         </main>

@@ -3,7 +3,7 @@
     // Pour PHP (inclure des fichiers)
     $fileRootPath = __DIR__ . '/';  // Chemin de fichiers, basé sur le dossier actuel
     // Pour les URLs HTML (liens)
-    $rootPath = '/webgames/';  // Chemin relatif pour les liens HTML
+    $rootPath = '/webgames';  // Chemin relatif pour les liens HTML
 ?>
 
 <!DOCTYPE html>
@@ -14,49 +14,49 @@
         <?php require_once($fileRootPath . 'Inclusions/header.php'); ?>
 
         <main>
-            <h1 id="jeux_solo">Jeux Solo</h1>
+            <h1 id="soloGames">Solo Games</h1>
             <div class="icones_row">
                 <a href="Games/AzerType/azertype.php">
-                    <img src="Images/azerType.png" alt="AzerType" title="Solo, Mots" class="icone">
+                    <img src="Images/azerType.png" alt="AzerType" title="Solo, Words" class="icone">
                 </a>
-                <a href="Games/Demineur/demineur.php">
-                    <img src="Images/demineur.png" alt ="Démineur" title="Solo, Réflexion" class="icone">
+                <a href="Games/Minesweeper/minesweeper.php">
+                    <img src="Images/minesweeper.png" alt ="Minesweeper" title="Solo, Puzzle" class="icone">
                 </a>
             </div>
 
-            <h1 id="jeux_multijoueurs">Jeux Multijoueurs</h1>
+            <h1 id="MultiplayersGames">Multiplayers Games</h1>
             <div class="icones_row">
-                <a href="Games/Morpion/morpion.php">
-                    <img src="Images/morpion.jpeg" alt="Morpion" title="Multijoueur, Réflexion" class="icone">
+                <a href="Games/TicTacToe/tictactoe.php">
+                    <img src="Images/tictactoe.jpeg" alt="tictactoe" title="Multiplayer, Puzzle" class="icone">
                 </a>
             </div>
 
-            <h1 id="jeux_de_mots">Jeux de Mots</h1>
+            <h1 id="WordsGames">Words games</h1>
             <div class="icones_row">
                 <a href="Games/AzerType/azertype.php">
-                    <img src="Images/azerType.png" alt="AzerType" title="Solo, Mots" class="icone">
+                    <img src="Images/azerType.png" alt="AzerType" title="Solo, Words" class="icone">
                 </a>
             </div>
 
-            <h1 id="jeux_de_reflexion">Jeux de Réflexion</h1>
+            <h1 id="PuzzleGames">Puzzle Games</h1>
             <div class="icones_row">
-                <a href="Games/Morpion/morpion.php">
-                    <img src="Images/morpion.jpeg" alt="Morpion" title="Multijoueur, Réflexion" class="icone">
+                <a href="Games/TicTacToe/tictactoe.php">
+                    <img src="Images/tictactoe.jpeg" alt="tictactoe" title="Multiplayer, Puzzle" class="icone">
                 </a>
-                <a href="Games/Demineur/demineur.php">
-                    <img src="Images/demineur.png" alt ="Démineur" title="Solo, Réflexion" class="icone">
+                <a href="Games/Minesweeper/minesweeper.php">
+                    <img src="Images/minesweeper.png" alt ="Minesweeper" title="Solo, Puzzle" class="icone">
                 </a>
-                <a href="Games/Morpion/morpion.php">
-                    <img src="Images/morpion.jpeg" alt="Morpion" title="Multijoueur, Réflexion" class="icone">
+                <a href="Games/TicTacToe/tictactoe.php">
+                    <img src="Images/tictactoe.jpeg" alt="tictactoe" title="Multiplayer, Puzzle" class="icone">
                 </a>
-                <a href="Games/Demineur/demineur.php">
-                    <img src="Images/demineur.png" alt ="Démineur" title="Solo, Réflexion" class="icone">
+                <a href="Games/Minesweeper/minesweeper.php">
+                    <img src="Images/minesweeper.png" alt ="Minesweeper" title="Solo, Puzzle" class="icone">
                 </a>
-                <a href="Games/Morpion/morpion.php">
-                    <img src="Images/morpion.jpeg" alt="Morpion" title="Multijoueur, Réflexion" class="icone">
+                <a href="Games/TicTacToe/tictactoe.php">
+                    <img src="Images/tictactoe.jpeg" alt="tictactoe" title="Multiplayer, Puzzle" class="icone">
                 </a>
-                <a href="Games/Demineur/demineur.php">
-                    <img src="Images/demineur.png" alt ="Démineur" title="Solo, Réflexion" class="icone">
+                <a href="Games/Minesweeper/minesweeper.php">
+                    <img src="Images/minesweeper.png" alt ="Minesweeper" title="Solo, Puzzle" class="icone">
                 </a>
             </div>
         </main>
