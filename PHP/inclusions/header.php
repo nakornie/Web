@@ -1,13 +1,22 @@
 <?php
+session_start();
 $typePage = isset($pageName) && $pageName === 'Home' 
             ? 'Home' 
             : ((strpos($pageName, 'Login') !== false || strpos($pageName, 'Profil') !== false) 
                 ? 'Login' 
                 : 'Game');
+
+if (!isset($_SESSION['userLogged'])) {$_SESSION['userLogged'] = false;}
 ?>
 
 <header>
-    <?php if ($typePage === 'Home') : ?>
+    <?php 
+    if ($_SESSION['userLogged']) :
+        echo '<h1> '. $_SESSION['username'] .'</h1>';
+    endif; 
+    ?>
+
+    <?php if ($typePage === 'Home' && !$_SESSION['userLogged']) : ?>
         <h1>Welcome !</h1>
         <h2>Chose a game and have fun !</h2>
     <?php endif; ?>
@@ -26,9 +35,16 @@ $typePage = isset($pageName) && $pageName === 'Home'
                 <li><a href="#rules">Rules</a></li>
             <?php endif; ?>
 
-            <?php if ($typePage != 'Login') : ?>
-                <li><a href="<?php echo $rootPath; ?>/User/login.php">Login</a></li>
-            <?php endif; ?>
+            <?php 
+            if ($typePage != 'Login') {
+                if (!$_SESSION['userLogged']){
+                    echo '<li><a href="' . $rootPath . '/User/login.php">Login</a></li>';
+                } else {
+                    $_SESSION['redirectAfterLogout'] = $_SERVER['REQUEST_URI'];
+                    echo '<li><a href="' . $rootPath . '/logout.php">Logout</a></li>';
+                }
+            }
+            ?>
         </ul>
     </nav>
 </header>

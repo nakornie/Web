@@ -1,4 +1,9 @@
 <?php
+    if (isset($_SESSION['error'])) {
+        echo '<script>console.log("' . addslashes($_SESSION['error']) . '");</script>';
+        unset($_SESSION['error']);
+    }
+
     $pageName = "Login";
     $rootPath = "../";
 ?>
@@ -12,7 +17,7 @@
 
         <main>
             <div class="toCenterContent">
-                <form id="authMode" action="profil.php" method="POST" onsubmit="return validateForm()">
+                <form id="authMode" action="validations/login_validation.php" method="POST" onsubmit="return validateForm()">
                     <fieldset class="authMode">
                         <label>
                             <input type="radio" name="authMode" value="login" checked onclick="toggleRegistrationMode()"> Login
