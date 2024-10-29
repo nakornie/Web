@@ -1,59 +1,59 @@
 <?php
 session_start();
+include_once __DIR__ . '/../../SQL/db.php';
+include_once __DIR__ . '/../../SQL/UserManager.php';
 
-$hasError = false;
+$errors = [];
+$username = $_POST['username'] ?? '';
+$password = $_POST['password'] ?? '';
+
 if (isset($_POST['authMode'])) {
     $authMode = $_POST['authMode'];
 
-    // Verifies validity of username
-    if (isset($_POST['username'] ) 
-        && !empty($_POST['username'])
-        && trim($_POST['username']) != " "
-    ) {
-        $username = htmlspecialchars($_POST['username']);
-    }
-    else {
-        $_SESSION['error'] = "Invalide username";
-        $hasError = true;
-    }
-
-    // Verifies validity of password
-    if (isset($_POST['password'] ) 
-        && !empty($_POST['password'])
-        && trim($_POST['password']) != " "
-    ) {
-        $password = htmlspecialchars($_POST['password']);
-    }
-    else {
-        $_SESSION['error'] = "Invalide password";
-        $hasError = true;
-    }
-
-    // If the user registers for the first time, checks if its password has been successfully confirmed
     if ($authMode === 'register') {
-        $confirmPassword = $_POST['confirmPassword'];
+        // Verifies the validity of the user name
+        if (empty(trim($username))) {
+            $errors[] = "Invalide user name.";
+        }
         
-        // Check if passwords match
-        if ($password === $confirmPassword) {
-            // Insert user into database, etc.
-        } else {
-            $_SESSION['error'] = "Passwords do not match";
-            $hasError = true;
+        // Verifies the disponibility of the user name
+        if ($userManager->getUserByName($username)) {
+            $errors[] = "User name already used.";
+        }
+
+        // Verifies the validity of the password
+        if (empty(trim($password))) {
+            $errors[] = "Invalid password.";
+        }
+
+        // Verifies that the password and its confirmation matche
+        if ($password !== ($_POST['confirmPassword'] ?? '')) {
+            $errors[] = "Les mots de passe ne correspondent pas.";
+        }
+
+        // If no error, add the user to the database
+        if (empty($errors)) {
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            $userManager->addUser($username, $hashedPassword);
+        }
+
+    } elseif ($authMode === 'login') {
+        $user = $userManager->getUserByName($username);
+        if (!$user || !password_verify($password, $user['user_password'])) {
+            $errors[] = "User name or password incorrect.";
         }
     }
 
-    if (!$hasError) {
+    // Redirecting according to the verifications' results
+    if (empty($errors)) {
         $_SESSION['userLogged'] = true;
         $_SESSION['username'] = $username;
-        $_SESSION['password'] = $password;
-
         header("Location: ../profil.php");
-        exit();
     } else {
+        $_SESSION['error'] = implode('<br>', $errors);
         header("Location: ../login.php");
-        exit();
     }
+    exit();
 } else {
-    echo "Error: No authentication mode selected!";
+    echo "Error : no identification mode selected !";
 }
-?>

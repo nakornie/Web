@@ -10,12 +10,6 @@ if (!isset($_SESSION['userLogged'])) {$_SESSION['userLogged'] = false;}
 ?>
 
 <header>
-    <?php 
-    if ($_SESSION['userLogged']) :
-        echo '<h1> '. $_SESSION['username'] .'</h1>';
-    endif; 
-    ?>
-
     <?php if ($typePage === 'Home' && !$_SESSION['userLogged']) : ?>
         <h1>Welcome !</h1>
         <h2>Chose a game and have fun !</h2>
@@ -24,6 +18,12 @@ if (!isset($_SESSION['userLogged'])) {$_SESSION['userLogged'] = false;}
     <?php if ($typePage != 'Home') : ?>
         <h1><?php echo isset($pageName) ? $pageName : 'Game X'; ?></h1>
     <?php endif; ?>
+
+    <?php 
+    if ($_SESSION['userLogged']) :
+        echo '<h1> '. $_SESSION['username'] .'</h1>';
+    endif; 
+    ?>
 
     <nav>
         <ul>
@@ -34,6 +34,12 @@ if (!isset($_SESSION['userLogged'])) {$_SESSION['userLogged'] = false;}
             <?php if ($typePage === 'Game') : ?>
                 <li><a href="#rules">Rules</a></li>
             <?php endif; ?>
+
+            <?php 
+            if ($_SESSION['userLogged'] && $pageName != "Profil") :
+                echo '<li><a href="' . $rootPath . '/User/profil.php">Profil</a></li>';
+            endif; 
+            ?>
 
             <?php 
             if ($typePage != 'Login') {
