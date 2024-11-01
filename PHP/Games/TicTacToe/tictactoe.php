@@ -4,7 +4,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
     <?php require_once(__DIR__ . '/' . $rootPath . '/Inclusions/head.php'); ?>
 
     <body>

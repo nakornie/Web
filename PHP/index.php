@@ -7,7 +7,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
     <?php require_once($fileRootPath . 'Inclusions/head.php'); ?>
 
     <body>

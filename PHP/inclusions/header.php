@@ -37,14 +37,14 @@ if (!isset($_SESSION['userLogged'])) {$_SESSION['userLogged'] = false;}
 
             <?php 
             if ($_SESSION['userLogged'] && $pageName != "Profil") :
-                echo '<li><a href="' . $rootPath . '/User/profil.php">Profil</a></li>';
+                echo '<li><a href="' . $rootPath . '/User/profil/profil.php">Profil</a></li>';
             endif; 
             ?>
 
             <?php 
             if ($typePage != 'Login') {
                 if (!$_SESSION['userLogged']){
-                    echo '<li><a href="' . $rootPath . '/User/login.php">Login</a></li>';
+                    echo '<li><a href="' . $rootPath . '/User/login/login.php">Login</a></li>';
                 } else {
                     $_SESSION['redirectAfterLogout'] = $_SERVER['REQUEST_URI'];
                     echo '<li><a href="' . $rootPath . '/logout.php">Logout</a></li>';

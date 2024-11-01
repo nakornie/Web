@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : jeu. 24 oct. 2024 à 10:12
+-- Généré le : mer. 30 oct. 2024 à 14:56
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -31,9 +31,10 @@ CREATE TABLE `UsersInfo` (
   `user_id` int(11) NOT NULL,
   `user_name` varchar(64) NOT NULL,
   `user_password` varchar(64) NOT NULL,
-  `user_lang` varchar(64) NOT NULL,
-  `user_img` varchar(128) NOT NULL,
-  `user_favcolor` varchar(64) NOT NULL
+  `user_lang` varchar(64) DEFAULT NULL,
+  `user_img` varchar(128) DEFAULT NULL,
+  `user_main_color` varchar(7) DEFAULT '#960151',
+  `user_secondary_color` varchar(7) NOT NULL DEFAULT '#FFEAFD'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -54,7 +55,7 @@ ALTER TABLE `UsersInfo`
 -- AUTO_INCREMENT pour la table `UsersInfo`
 --
 ALTER TABLE `UsersInfo`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -16,7 +16,7 @@
 
     color: white;
 
-    background-color: #960151;
+    background-color: var(--primary-color);
     border-radius: 20px;
 }
 
@@ -99,19 +99,11 @@ input[type="radio"] {
 
 button:hover {
     color: white;
-    background-color: #960151;
+    background-color: var(--primary-color);
     cursor: pointer;
 }
 
-button:focus {
-    background-color: var(--color-tertiary);
-    border: 3px solid var(--color-primary);
-    padding: 2px;
-    
-}
-
 .scoreZone {
-    /* margin-top: 3vw; */
     font-size: 1.3em;
     line-height: 170%;
 }

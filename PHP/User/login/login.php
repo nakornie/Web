@@ -5,11 +5,11 @@
     }
 
     $pageName = "Login";
-    $rootPath = "../";
+    $rootPath = "../../";
 ?>
 
 <!DOCTYPE HTML>
-<html lang="fr">
+<html lang="en">
     <?php require_once(__DIR__ . '/' . $rootPath . 'Inclusions/head.php'); ?>
 
     <body>
@@ -17,7 +17,7 @@
 
         <main>
             <div class="toCenterContent">
-                <form id="authMode" action="validations/login_validation.php" method="POST" onsubmit="return validateForm()">
+                <form id="authMode" action="../validations/login_validation.php" method="POST" onsubmit="return validateForm()">
                     <fieldset class="authMode">
                         <label>
                             <input type="radio" name="authMode" value="login" checked onclick="toggleRegistrationMode()"> Login

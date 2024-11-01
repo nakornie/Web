@@ -5,10 +5,11 @@
     <?php
         echo "<title>{$pageName}</title>";
 
+        echo '<link href="' . $rootPath . '/user_style.php" rel="stylesheet">';
         echo '<link href="' . $rootPath . '/style.css" rel="stylesheet">';
-        echo '<link href="' . strtolower($pageName) . '_style.css" rel="stylesheet">';
         
         if ($pageName != "Home") {
+            echo '<link href="' . strtolower($pageName) . '_style.css" rel="stylesheet">';
             echo '<script src="scripts/config.js" defer></script>';
             echo '<script src="scripts/script.js" defer></script>';
             echo '<script src="scripts/main.js" defer></script>';

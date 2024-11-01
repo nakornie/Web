@@ -13,7 +13,7 @@
 form {
     width: max(100px, 50vw);
     border: none;
-    background-color: #960151;
+    background-color: var(--primary-color);
     color: white;
 
     margin-top: 5vw;
@@ -74,7 +74,7 @@ button {
     width: 20%;
     min-width: 100px;
     border-radius: 20px;
-    border: solid #960151;
+    border: solid var(--primary-color);
 
     margin-top: 2vw;
     margin-bottom: 3vw;
@@ -87,7 +87,7 @@ button {
 
 button:hover {
     color: white;
-    background-color: #960151;
+    background-color: var(--primary-color);
     border: solid white;
     cursor: pointer;
 }

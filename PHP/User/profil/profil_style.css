@@ -1,0 +1,88 @@
+/********************************************************************************/
+/*User settings*/
+/********************************************************************************/
+.accordion {
+    width: max(100px, 50vw);
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    padding: 2vw;
+
+    text-align: center;
+    font-size: 1.8em;
+
+    border-radius: 30px;
+}
+
+.accordion-header {
+    cursor: pointer;
+}
+
+.accordion-content {
+    background-color: var(--primary-color);
+    display: none;
+    margin-top: 1vw;
+    padding: 10px;
+}
+
+
+/********************************************************************************/
+/*Language parameter*/
+/********************************************************************************/
+
+
+
+/********************************************************************************/
+/*Color parameter*/
+/********************************************************************************/
+.accordion-color {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin: 2vw;
+}
+
+input[type='color'] {
+    width: max(10vh, 10vw);
+    height: max(5vh, 5vw);
+    border: solid 0.1vw white;
+}
+
+
+/********************************************************************************/
+/*Profil image parameter*/
+/********************************************************************************/
+/* Style for image preview */
+#imagePreview {
+    width: auto;
+    height: auto;
+
+    max-width: 10vw;
+    max-height: 10vw;
+
+    border: 1px solid #ccc;
+    display: none;
+
+    margin: 1vw;
+}
+
+
+/********************************************************************************/
+/*Adaptability*/
+/********************************************************************************/
+@media screen and (max-width: 350px){
+    
+}
+
+@media screen and (max-width: 600px) {
+
+}
+
+@media screen and (min-width: 1300px) {
+
+}

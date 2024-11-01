@@ -48,10 +48,10 @@ if (isset($_POST['authMode'])) {
     if (empty($errors)) {
         $_SESSION['userLogged'] = true;
         $_SESSION['username'] = $username;
-        header("Location: ../profil.php");
+        header("Location: ../profil/profil.php");
     } else {
         $_SESSION['error'] = implode('<br>', $errors);
-        header("Location: ../login.php");
+        header("Location: ../login/login.php");
     }
     exit();
 } else {
