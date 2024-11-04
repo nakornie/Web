@@ -5,7 +5,7 @@ include_once 'SQL/db.php';
 include_once 'SQL/UserManager.php';
 
 // Get user's colors of choice (default colors if never set)
-$userPreferences = $userManager->getUserColors($_SESSION['username'] ?? '');
+// $userPreferences = $userManager->getUserColors($_SESSION['username'] ?? '');
 
 // Define default color if user not logged
 $userName = $_SESSION['username'] ?? '';
