@@ -8,7 +8,7 @@ $colorOption = $_POST['colorOption'];
 $mainColor = $_POST['mainColor'] ?? '';
 $subColor = $_POST['subColor'] ?? '';
 
-$userName = $_SESSION['username'];
+$userName = $_SESSION['userName'];
 
 if ($colorOption === "default") {
     $userManager->setUserColors($userName, '#960151', '#FFEAFD');

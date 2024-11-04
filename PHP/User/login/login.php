@@ -28,8 +28,8 @@
                     </fieldset>
 
                     <fieldset>
-                    <label for="username">Username :</label><br>
-                    <input type="text" id="username" name="username" required>
+                    <label for="userName">Username :</label><br>
+                    <input type="text" id="userName" name="userName" required>
                     </fieldset>
 
                     <fieldset>

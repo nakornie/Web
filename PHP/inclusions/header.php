@@ -21,8 +21,12 @@ if (!isset($_SESSION['userLogged'])) {$_SESSION['userLogged'] = false;}
 
     <?php 
     if ($_SESSION['userLogged']) :
-        echo '<h1> '. $_SESSION['username'] .'</h1>';
-    endif; 
+        if (isset($_SESSION['userImage'])) :
+            $imagePath = $rootPath . 'User/profilImages/' . $_SESSION['userImage'];
+            echo '<img src="' . $imagePath . '" alt="' . $_SESSION['userImage'] . '" class="profil-image">';
+        endif; 
+        echo '<h1> '. $_SESSION['userName'] .'</h1>';
+    endif;    
     ?>
 
     <nav>

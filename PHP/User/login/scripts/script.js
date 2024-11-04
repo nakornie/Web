@@ -12,13 +12,13 @@ function toggleRegistrationMode() {
 }
 
 function validateForm() {
-    const username = document.getElementById('username').value.trim();
+    const userName = document.getElementById('userName').value.trim();
                 const password = document.getElementById('password').value.trim();
                 const confirmPasswordField = document.getElementById('confirmPasswordField');
                 const authMode = document.querySelector('input[name="authMode"]:checked').value;
                 
                 // Validation du nom d'utilisateur
-                if (username === "") {
+                if (userName === "") {
                     alert("Username required.");
                     return false;
                 }

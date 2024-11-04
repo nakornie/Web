@@ -61,16 +61,17 @@
                     <div class="accordion">
                         <div class="accordion-header">Profil Image</div>
                         <div class="accordion-content">
-                            <input type="file" id="profileImage" accept="image/*">
+                            <input type="file" name="profileImage" id="profileImage" accept="image/*">
 
                             <div class="toCenterContent">
                             <img id="imagePreview" src="#" alt="Image preview">
                             </div>
+
                             <button type="submit" class="save-btn">Save</button>
                         </div>
                     </div>
-                    </div>
                 </form>
+            </div>
         </div>
 
         

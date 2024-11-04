@@ -29,7 +29,7 @@
     padding: 10px;
 }
 
-button {
+.save-btn {
     width: 20%;
     min-width: 100px;
     border-radius: 20px;
@@ -42,7 +42,7 @@ button {
     margin: max(2vw, 2vh);
 }
 
-button:hover {
+.save-btn:hover {
     color: white;
     background-color: var(--primary-color);
     cursor: pointer;
