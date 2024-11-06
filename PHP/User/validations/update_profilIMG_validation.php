@@ -4,8 +4,8 @@ include_once __DIR__ . '/../../SQL/db.php';
 include_once __DIR__ . '/../../SQL/UserManager.php';
 
 if (isset($_FILES['profileImage']) && $_FILES['profileImage']['error'] == 0) {
-    // Verifies that the file doesn't exceed 1 Mo
-    if ($_FILES['profileImage']['size'] > 1000000) {
+    // Verifies that the file doesn't exceed 2 Mo
+    if ($_FILES['profileImage']['size'] > 2000000) {
         echo "Upload failed, image size too large";
         return;
     }
@@ -28,7 +28,8 @@ if (isset($_FILES['profileImage']) && $_FILES['profileImage']['error'] == 0) {
         return;
     }
     
-    $filename = $_SESSION['userName'] . '_profil_IMG.' . $extension;
+    $userName =  $_SESSION['userName'];
+    $filename = $userName . '_profil_IMG.' . $extension;
     $filePath = $path . '/' . $filename;
 
     if (is_uploaded_file($_FILES['profileImage']['tmp_name'])) {
@@ -44,6 +45,6 @@ if (isset($_FILES['profileImage']) && $_FILES['profileImage']['error'] == 0) {
     
 }
 
-// header("Location: ../profil/profil.php");
-// exit();
+header("Location: ../profil/profil.php");
+exit();
 ?>

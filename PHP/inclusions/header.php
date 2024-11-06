@@ -19,12 +19,15 @@ if (!isset($_SESSION['userLogged'])) {$_SESSION['userLogged'] = false;}
         <h1><?php echo isset($pageName) ? $pageName : 'Game X'; ?></h1>
     <?php endif; ?>
 
+    <?php
+    if (isset($_SESSION['userImage'])) :
+        $imagePath = $rootPath . '/User/profilImages/' . $_SESSION['userImage'] . '?' . time();
+        echo '<div class="toCenterContent"><div class="profil-image-container"><img src="' . $imagePath . '" alt="' . $_SESSION['userImage'] . '" class="profil-image"></div></div>';
+     endif; 
+    ?>
+
     <?php 
     if ($_SESSION['userLogged']) :
-        if (isset($_SESSION['userImage'])) :
-            $imagePath = $rootPath . 'User/profilImages/' . $_SESSION['userImage'];
-            echo '<img src="' . $imagePath . '" alt="' . $_SESSION['userImage'] . '" class="profil-image">';
-        endif; 
         echo '<h1> '. $_SESSION['userName'] .'</h1>';
     endif;    
     ?>

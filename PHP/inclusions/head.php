@@ -7,6 +7,8 @@
 
         echo '<link href="' . $rootPath . '/user_style.php" rel="stylesheet">';
         echo '<link href="' . $rootPath . '/style.css" rel="stylesheet">';
+
+        echo '<script src="' . $rootPath . '/profil_image_adaptation.js" defer></script>';
         
         if ($pageName != "Home") {
             echo '<link href="' . strtolower($pageName) . '_style.css" rel="stylesheet">';
