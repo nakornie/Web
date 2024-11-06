@@ -32,7 +32,7 @@
 .save-btn {
     width: 20%;
     min-width: 100px;
-    border-radius: 20px;
+    border-radius: 20%;
     border: none;
 
     font-size: 0.8em;
@@ -97,17 +97,67 @@ input[type='radio']:not(:first-child) {
 /********************************************************************************/
 /* Style for image preview */
 #imagePreview {
-    width: auto;
+    width: 50%;
     height: auto;
-
-    max-width: 10vw;
-    max-height: 10vw;
 
     border: 1px solid white;
     display: none;
 
-    margin: 1vw;
+    margin-top: 2vw;
 }
+
+.file-upload-container {
+    position: relative;
+    width: 50%;
+
+    margin: 0 auto;
+    margin-bottom: max(5vw, 5vh);
+}
+
+input[type="file"] {
+    width: 100%;
+    height: 50px;
+
+    opacity: 0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+#overlayButton {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: auto;
+
+    color: black;
+    background-color: white;
+
+    border-radius: 20%;
+    border: none;
+
+    font-size: 0.8em;
+    font-weight: 500;
+
+    /* padding: 1vw; */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+}
+
+input[type="file"]:hover + #overlayButton {
+    background-color: var(--primary-color);
+    color: white;
+}
+
 
 
 /********************************************************************************/
@@ -139,6 +189,10 @@ input[type='radio']:not(:first-child) {
     input[type='color'] {
         width: max(10vh, 10vw);
         height: max(10vh, 10vw);
+    }
+
+    .file-upload-container {
+        width: 75%;
     }
 }
 
