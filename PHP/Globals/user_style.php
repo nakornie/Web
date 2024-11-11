@@ -1,11 +1,8 @@
 <?php
 header("Content-Type: text/css; charset=UTF-8");
 session_start();
-include_once 'SQL/db.php';
-include_once 'SQL/UserManager.php';
-
-// Get user's colors of choice (default colors if never set)
-// $userPreferences = $userManager->getUserColors($_SESSION['userName'] ?? '');
+include_once '../SQL/db.php';
+include_once '../SQL/UserManager.php';
 
 // Define default color if user not logged
 $userName = $_SESSION['userName'] ?? '';

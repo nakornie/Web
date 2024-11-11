@@ -1,5 +1,4 @@
 <?php
-session_start();
 $typePage = isset($pageName) && $pageName === 'Home' 
             ? 'Home' 
             : ((strpos($pageName, 'Login') !== false || strpos($pageName, 'Profil') !== false) 
@@ -9,10 +8,12 @@ $typePage = isset($pageName) && $pageName === 'Home'
 if (!isset($_SESSION['userLogged'])) {$_SESSION['userLogged'] = false;}
 ?>
 
+<?php require_once(__DIR__ . '/../Globals/config.php'); ?>
+
 <header>
     <?php if ($typePage === 'Home' && !$_SESSION['userLogged']) : ?>
-        <h1>Welcome !</h1>
-        <h2>Chose a game and have fun !</h2>
+        <h1><?php echo t('welcome') ?></h1>
+        <h2><?php echo t('home_title') ?></h2>
     <?php endif; ?>
     
     <?php if ($typePage != 'Home') : ?>
@@ -35,26 +36,30 @@ if (!isset($_SESSION['userLogged'])) {$_SESSION['userLogged'] = false;}
     <nav>
         <ul>
             <?php if ($typePage != 'Home') : ?>
-                <li><a href="<?php echo $rootPath; ?>/index.php">Home</a></li>
+                <li><a href="<?php echo $rootPath; ?>/index.php"><?php echo t('home') ?></a></li>
             <?php endif; ?>
 
             <?php if ($typePage === 'Game') : ?>
-                <li><a href="#rules">Rules</a></li>
+                <li><a href="#rules"><?php echo t('rules') ?></a></li>
             <?php endif; ?>
 
             <?php 
             if ($_SESSION['userLogged'] && $pageName != "Profil") :
-                echo '<li><a href="' . $rootPath . '/User/profil/profil.php">Profil</a></li>';
+                echo '<li><a href="' . $rootPath . '/User/profil/profil.php">' . t('profile') . '</a></li>';
             endif; 
             ?>
 
             <?php 
-            if ($typePage != 'Login') {
+            if ($pageName != 'Login') {
                 if (!$_SESSION['userLogged']){
-                    echo '<li><a href="' . $rootPath . '/User/login/login.php">Login</a></li>';
+                    echo '<li><a href="' . $rootPath . '/User/login/login.php">' . t('login') . '</a></li>';
                 } else {
-                    $_SESSION['redirectAfterLogout'] = $_SERVER['REQUEST_URI'];
-                    echo '<li><a href="' . $rootPath . '/logout.php">Logout</a></li>';
+                    if ($pageName === 'Profil') {
+                        $_SESSION['redirectAfterLogout'] = $rootPath . '/index.php';
+                    } else {
+                        $_SESSION['redirectAfterLogout'] = $_SERVER['REQUEST_URI'];
+                    }
+                    echo '<li><a href="' . $rootPath . '/Globals/logout.php">' . t('logout') . '</a></li>';
                 }
             }
             ?>

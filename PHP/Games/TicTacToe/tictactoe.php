@@ -3,8 +3,10 @@
     $rootPath = "../..";
 ?>
 
+<?php require_once(__DIR__ . '/' . $rootPath . '/Globals/config.php'); ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo htmlspecialchars($lang); ?>">
     <?php require_once(__DIR__ . '/' . $rootPath . '/Inclusions/head.php'); ?>
 
     <body>
@@ -12,9 +14,10 @@
         
     <main>
             <img src="../../Images/tictactoe.jpeg" alt="TicTacToe" title="Comming soon" class="replacement">
-            <h1 id="rules" class="banner">Game's Rules</h1>
-            <h2 class="banner">Goal</h2>
-            <h2 class="banner">How to play</h2>
+            <h1 id="rules" class="banner"><?php echo t('game_rules') ?></h1>
+            <h2 class="banner"><?php echo t('goal') ?></h2>
+
+            <h2 class="banner"><?php echo t('how_to_play') ?></h2>
         </main>
 
         <?php require_once(__DIR__ . '/' . $rootPath . '/Inclusions/footer.php'); ?>

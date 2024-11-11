@@ -49,15 +49,16 @@ if (isset($_POST['authMode'])) {
         $_SESSION['userLogged'] = true;
         $_SESSION['userName'] = $userName;
 
-        $userColors = $userName ? $userManager->getUserColors($userName) : [];
-        $mainColor = $userColors['user_main_color'] ?? '#960151';
-        $subColor = $userColors['user_secondary_color'] ?? '#FFEAFD';
+        $userPreferences = $userName ? $userManager->getUserColors($userName) : [];
+        $primaryColor = $userPreferences['user_main_color'] ?? '#960151';
+        $secondaryColor = $userPreferences['user_secondary_color'] ?? '#FFEAFD';
         $_SESSION['userColors'] = [
-            'mainColor' => $mainColor,
-            'subColor' => $subColor
+            'mainColor' => $primaryColor,
+            'subColor' => $secondaryColor
         ];
 
-        $_SESSION['userColors'] = $userManager->getUserImage($userName);
+        $img = $userManager->getUserImage($userName);
+        $_SESSION['userImage'] = $img['user_img'];
 
         header("Location: ../profil/profil.php");
     } else {

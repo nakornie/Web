@@ -43,6 +43,6 @@ if ($colorOption === "default") {
     header("Location: ../profil/profil.php");
     exit();
 } else {
-    $errors[] = "Invalide color choise";
+    $errors[] = "Invalide color choice";
 }
 ?>
