@@ -60,6 +60,9 @@ if (isset($_POST['authMode'])) {
         $img = $userManager->getUserImage($userName);
         $_SESSION['userImage'] = $img['user_img'];
 
+        $lang = $userManager->getUserLanguage($userName);
+        $_SESSION['lang'] = $img['lang'];
+
         header("Location: ../profil/profil.php");
     } else {
         $_SESSION['error'] = implode('<br>', $errors);

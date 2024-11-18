@@ -1,8 +1,8 @@
 <?php
-session_start(); // Démarrage de la session
+session_start();
 
 // Détecte la langue à partir de la session ou utilise une langue par défaut
-$lang = $_SESSION['lang'] ?? 'fr';
+$lang = $_SESSION['lang'] ?? 'en';
 $langFile = __DIR__ . "/../languages/$lang.php";
 
 // Charge le fichier de langue

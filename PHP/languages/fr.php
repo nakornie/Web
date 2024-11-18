@@ -61,7 +61,7 @@ return [
 
     // Profil page
     // Language section
-    'title_language' => "Language",
+    'title_language' => "Langage",
     
     // Color section
     'title_color' => "Couleurs du Site",
@@ -73,6 +73,10 @@ return [
     // Profil image section
     'title_img' => "Image de Profil",
     'img_button' => "Choisir document",
+
+    // Search section
+    'search' => "Rechercher",
+    'reset' => "Annuler",
 
     // Common to many pages
     'validate' => "Valider",

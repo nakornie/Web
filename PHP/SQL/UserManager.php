@@ -48,6 +48,17 @@ class UserManager {
         return $user ?: false;
     }
 
+    public function getUserLanguage($userName) {
+        $sqlQuery = 'SELECT user_lang FROM usersInfo WHERE user_name = :user_name';
+        $lang = $this->mysqlClient->prepare($sqlQuery);
+        $lang->execute([
+            'user_name' => $userName,
+        ]);
+        $user = $lang->fetch(PDO::FETCH_ASSOC);
+
+        return $user ?: false;
+    }
+
     public function setUserColors($userName, $mainColor, $subColor) {
         $sqlQuery = 'UPDATE usersInfo SET user_main_color = :user_main_color, user_secondary_color = :user_secondary_color WHERE user_name = :user_name';
         $colors = $this->mysqlClient->prepare($sqlQuery);
@@ -64,6 +75,15 @@ class UserManager {
         $colors->execute([
             'user_name' => $userName,
             'user_img' => $profilIMG
+        ]);
+    }
+
+    public function setUserLanguage($userName, $lang) {
+        $sqlQuery = 'UPDATE usersInfo SET user_lang= :user_lang WHERE user_name = :user_name';
+        $colors = $this->mysqlClient->prepare($sqlQuery);
+        $colors->execute([
+            'user_name' => $userName,
+            'user_lang' => $lang
         ]);
     }
 }

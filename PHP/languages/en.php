@@ -75,6 +75,10 @@ return [
     'title_img' => "Profil Image",
     'img_button' => "Choose file",
 
+    // Search section
+    'search' => "Search",
+    'reset' => "Reset",
+
     // Common to many pages
     'validate' => "Validate",
     'save' => "Save",
