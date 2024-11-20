@@ -56,6 +56,12 @@ return [
     'start' => "Commencer",
     'score' => "Votre score : ",
     'timer' => "Chrono : ",
+    'time' => "Temps",
+    'score_s' => "Score",
+    'ratio' => "Ratio points/temps",
+    'best' => "Meilleur",
+    'avg' => "Moyenne",
+    'worst' => 'Pire',
 
     // Login page
     'register' => "Créer un compte",
@@ -84,6 +90,11 @@ return [
 
     // Scores
     'gameScores' => "Scores des Jeux",
+    'scoreForWords' => "Score pour mots",
+    'scoreForSentences' => "Score pour phrases",
+    'type_game' => "Type de jeux",
+    'nb_players' => "Nombre de joueurs",
+    'all_games' => "Tout les jeux",
 
     // Common to many pages
     'validate' => "Valider",

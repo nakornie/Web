@@ -200,6 +200,8 @@ h2.banner {
 table {
     border-collapse: collapse;
     margin: 1vw;
+
+    width: 80%;
 }
 
 td, th {
@@ -242,6 +244,11 @@ caption {
         margin: 5vw;
         font-size: 1.2em;
         text-align: justify;
+    }
+
+    table {
+        font-size: 0.7em;
+        width: 90%;
     }
 }
 
@@ -287,5 +294,9 @@ caption {
         -webkit-transform: scale(2); /* Pour compatibilité avec certains anciens navigateurs */
         -moz-transform: scale(2); /* Compatibilité avec Firefox */
         margin-right: 10px;
+    }
+
+    table {
+        font-size: 2.2em;;
     }
 }

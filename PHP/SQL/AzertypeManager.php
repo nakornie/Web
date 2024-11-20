@@ -20,7 +20,7 @@ class AzertypeManager {
     }
 
     function getBestTime($user_name, $difficulty) {
-        $sqlQuery = 'SELECT MAX(timer) as result FROM AzertypeScores WHERE user_name = :user_name AND difficulty = :difficulty';
+        $sqlQuery = 'SELECT MIN(timer) as result FROM AzertypeScores WHERE user_name = :user_name AND difficulty = :difficulty';
         $bestTime = $this->mysqlClient->prepare($sqlQuery);
         $bestTime->execute([
             'user_name' => $user_name,
@@ -92,7 +92,7 @@ class AzertypeManager {
     }
 
     function getWorstTime($user_name, $difficulty) {
-        $sqlQuery = 'SELECT MIN(timer) as result FROM AzertypeScores WHERE user_name = :user_name AND difficulty = :difficulty';
+        $sqlQuery = 'SELECT MAX(timer) as result FROM AzertypeScores WHERE user_name = :user_name AND difficulty = :difficulty';
         $worstTime = $this->mysqlClient->prepare($sqlQuery);
         $worstTime->execute([
             'user_name' => $user_name,

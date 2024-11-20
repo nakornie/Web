@@ -116,8 +116,8 @@ function resetGame() {
 function sendScore() {
     const payload = {
         timer: time, 
-        score: Math.round((score / i * 100) * 100) / 100, 
-        ratio: Math.round((score / time) * 100) / 100, 
+        player_score: Math.round((score / i * 100) * 100) / 100, 
+        ratio: Math.round((player_score / time) * 100) / 100, 
         difficulty: difficulty,
     };
 

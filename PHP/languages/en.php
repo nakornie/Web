@@ -57,6 +57,12 @@ return [
     'start' => "Start",
     'score' => "Your score : ",
     'timer' => "Timer : ",
+    'time' => "Time",
+    'score_s' => "Score",
+    'ratio' => "Ratio points/time",
+    'best' => "Best",
+    'avg' => "Average",
+    'worst' => 'Worst',
 
     // Login page
     'register' => "Create account",
@@ -85,6 +91,11 @@ return [
 
     // Scores
     'gameScores' => "Games' scores",
+    'scoreForWords' => "Score for words",
+    'scoreForSentences' => "Score for sentences",
+    'type_game' => "Type of games",
+    'nb_players' => "Number of players",
+    'all_games' => "All games",
 
     // Common to many pages
     'validate' => "Validate",

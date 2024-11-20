@@ -1,6 +1,7 @@
 /********************************************************************************/
 /*Accordions*/
 /********************************************************************************/
+/*Setting accordions*/
 .accordionSettings .accordion {
     width: max(100px, 50vw);
     border: none;
@@ -30,8 +31,8 @@
 }
 
 
-.gameScores .accordion{
-    border: solid var(--primary-color) 1vh;
+/*Scores display accordions*/
+.gameScores .accordion {
     border-radius: 30px;
     margin: 2vw;
     margin-left: 1vw;
@@ -39,8 +40,8 @@
 }
 
 .gameScores .accordion-header {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--secondary-color);
+    color: black;
     padding: 1vw;
     border-radius: 15px;
     cursor: pointer;
@@ -49,10 +50,11 @@
 
 .gameScores .accordion-content {
     display: none; /* Initialement caché */
-    border: solid var(--primary-color) 1vh;
     border-radius: 15px;
-    margin-top: 1vw;
+    margin-top: max(1vw, 1vh);
     padding: 1.5vw;
+
+    background-color: var(--secondary-color);
 }
 
 
@@ -323,6 +325,8 @@ input[type="file"]:hover + #overlayButton {
     margin: 2vw;
     margin-left: 1vw;
     padding: 2vw;
+
+    background-color: var(--primary-color);
 }
 
 
@@ -336,7 +340,7 @@ input[type="file"]:hover + #overlayButton {
 }
 
 @media screen and (max-width: 600px) {
-    .accordion {
+    .accordionSettings .accordion {
         width: max(100px, 75vw);
     
         margin-top: 5vh;
@@ -346,11 +350,11 @@ input[type="file"]:hover + #overlayButton {
         font-size: 1.6em;
     }
 
-    .accordion-header {
+    .accordionSettings .accordion-header {
         padding: 1vh;
     }
 
-    .accordion-color {
+    .accordionSettings .accordion-color {
         flex-direction: column;
     }
 
@@ -378,6 +382,8 @@ input[type="file"]:hover + #overlayButton {
     .searchDiv {
         width: 100%;
         padding: 2vh;
+
+        position: static;
     }
 
     .scoresDiv {
@@ -391,8 +397,12 @@ input[type="file"]:hover + #overlayButton {
 }
 
 @media screen and (min-width: 1300px) {
-    .accordion {    
+    .accordionSettings .accordion {    
         font-size: 3.3em;
+    }
+
+    .gameScores .accordion-header {
+        font-size: 1.2em;
     }
 
     input[type='color'] {
@@ -404,5 +414,20 @@ input[type="file"]:hover + #overlayButton {
     .searchButton {
         width: 15%;
         height: 15%;
+    }
+
+    .resetButton {
+        font-size: 2em;
+    }
+
+    .selectOption label{
+        width: 100%;        
+        font-size: 2em;
+    }
+    
+    .selectOption select {
+        width: 75%;
+        font-size: unset;
+        font-size: 100px;
     }
 }

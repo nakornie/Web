@@ -99,24 +99,24 @@ echo '</pre>';
 
                 <div class="toCenterContent">
                     <div class="selectOption">
-                        <label for="nbPlayers">Number of players</label>
+                        <label for="nbPlayers"><?php echo t('nb_players') ?></label>
                         <br>
                         <select name="nbPlayers" id="nbPlayers">
-                            <option value="undefined" selected>All games</option>
-                            <option value="solo">Solo games</option>
-                            <option value="multi">Multiplayer</option>
+                            <option value="undefined" selected><?php echo t('all_games') ?></option>
+                            <option value="solo"><?php echo t('solo') ?></option>
+                            <option value="multi"><?php echo t('multi') ?></option>
                         </select>
                     </div>
                 </div>      
 
                 <div class="toCenterContent">
                     <div class="selectOption">
-                        <label for="gameType">Type of game</label>
+                        <label for="gameType"><?php echo t('type_game') ?></label>
                         <br>
                         <select name="gameType" id="gameType">
-                            <option value="undefined" selected>All games</option>
-                            <option value="words">Words</option>
-                            <option value="puzzle">Puzzle</option>
+                            <option value="undefined" selected><?php echo t('all_games') ?></option>
+                            <option value="words"><?php echo t('words') ?></option>
+                            <option value="puzzle"><?php echo t('puzzle') ?></option>
                         </select>
                     </div>
                 </div>
