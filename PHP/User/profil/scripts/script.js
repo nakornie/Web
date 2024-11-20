@@ -1,14 +1,50 @@
+// Récupérer les options sélectionnées
+const filters = {
+    type: 'undefined',   // Exemple : type de jeu sélectionné
+    mode: 'undefined'    // Exemple : mode de jeu sélectionné
+};
+
+// Fonction pour filtrer les jeux
+function filterGames() {
+    // Récupérer tous les éléments avec la classe "game"
+    const games = document.querySelectorAll('.gameScores');
+    
+    games.forEach(game => {
+        // Vérifier si l'élément contient les classes correspondant aux filtres
+        const matchesType = game.classList.contains(filters.type) || filters.type === 'undefined';
+        const matchesMode = game.classList.contains(filters.mode) || filters.mode === 'undefined';
+
+        // Afficher ou masquer l'élément
+        if (matchesType && matchesMode) {
+            game.style.display = 'block'; // Afficher
+        } else {
+            game.style.display = 'none'; // Masquer
+        }
+    });
+}
+
+
 function linkFunctions() {
     profilIMGpreview();
 
     const searchButton = document.getElementById("searchButton");
     searchButton.addEventListener("click", () => {
-        showGamesOfInterest();
+        searchGameByName();
     });
 
     const resetButton = document.getElementById("resetButton");
     resetButton.addEventListener("click", () => {
         resetScoresSection();
+    });
+
+    document.getElementById('nbPlayers').addEventListener('change', (event) => {
+        filters.mode = event.target.value; // Met à jour le mode sélectionné
+        filterGames();
+    });
+    
+    document.getElementById('gameType').addEventListener('change', (event) => {
+        filters.type = event.target.value; // Met à jour le type sélectionné
+        filterGames();
     });
 }
 
@@ -51,10 +87,16 @@ function resetScoresSection() {
 
     const searchGame = document.getElementById('searchGame');
     searchGame.value = "";
+
+    const nbPlayersDropdown = document.getElementById('nbPlayers');
+    const gameTypeDropdown = document.getElementById('gameType');
+
+    nbPlayersDropdown.value = 'undefined';
+    gameTypeDropdown.value = 'undefined';
 }
 
 
-function showGamesOfInterest() {
+function searchGameByName() {
     const searchGame = document.getElementById('searchGame');
     const searchedGame = searchGame.value;
 

@@ -23,6 +23,10 @@ return [
     'words' => 'Words Games',
     'puzzle' => 'Puzzle Games',
 
+    //Games names
+    'tictactoe' => "Tic-Tac-Toe",
+    'minesweeper' => "Minesweeper",
+
     // Games' banners
     'game_rules' => 'Game\'s Rules',
     'goal' => 'Goal',
@@ -76,8 +80,11 @@ return [
     'img_button' => "Choose file",
 
     // Search section
-    'search' => "Search",
+    'search-placeholder' => "Game's name",
     'reset' => "Reset",
+
+    // Scores
+    'gameScores' => "Games' scores",
 
     // Common to many pages
     'validate' => "Validate",

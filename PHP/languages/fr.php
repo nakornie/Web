@@ -22,6 +22,10 @@ return [
     'words' => 'Jeux de Mots',
     'puzzle' => 'Jeux de Réflexion',
 
+    //Games names
+    'tictactoe' => "Morpion",
+    'minesweeper' => "Démineur",
+
     // Games' banners
     'game_rules' => 'Règles du Jeu',
     'goal' => 'But du Jeu',
@@ -75,8 +79,11 @@ return [
     'img_button' => "Choisir document",
 
     // Search section
-    'search' => "Rechercher",
+    'search-placeholder' => "Nom du jeu",
     'reset' => "Annuler",
+
+    // Scores
+    'gameScores' => "Scores des Jeux",
 
     // Common to many pages
     'validate' => "Valider",

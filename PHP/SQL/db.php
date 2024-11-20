@@ -1,5 +1,6 @@
 <?php
 require_once 'UserManager.php';
+require_once 'AzertypeManager.php';
 
 try {
     $mysqlClient = new PDO(
@@ -13,5 +14,6 @@ try {
 }
 
 $userManager = new UserManager($mysqlClient);
+$AzertypeManager = new AzertypeManager($mysqlClient);
 
 ?>

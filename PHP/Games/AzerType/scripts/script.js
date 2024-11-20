@@ -1,6 +1,7 @@
 let i = 0;
 let score = 0;
 let gameList = words;
+let difficulty = "words";
 let time = 0;
 let timerRunning = false;
 
@@ -16,7 +17,6 @@ function addSecond() {
         timer.innerText = minutes + ":" + secondes;
         time++;
     }
-    
 }
 
 // Activates the radio buttons used to slect the level
@@ -85,6 +85,9 @@ function gameLoop() {
 
 // Function to handle game reset
 function resetGame() {
+    // Sends score in database
+    sendScore();
+
     let validateButton = document.getElementById("validateButton");
     validateButton.innerText = "New Game";
     validateButton.id = "btnStartGame"; // Reset button ID for next start
@@ -108,6 +111,39 @@ function resetGame() {
     }, { once: true })
 }
 
+
+// Sends score to database
+function sendScore() {
+    const payload = {
+        timer: time, 
+        score: Math.round((score / i * 100) * 100) / 100, 
+        ratio: Math.round((score / time) * 100) / 100, 
+        difficulty: difficulty,
+    };
+
+    console.log('Payload envoyé :', payload);
+
+    fetch('/webgames/Games/AzerType/scripts/add_score.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            console.log('Score ajouté avec succès !');
+        } else {
+            console.error('Erreur lors de l\'ajout du score :', data.error);
+        }
+    })
+    .catch(error => {
+        console.error('Erreur réseau :', error);
+    });
+}
+
+
 // Prepares the game
 function startGame() {
     // Choose whether the list used will be words or sentences through radio buttons
@@ -116,8 +152,10 @@ function startGame() {
         listOptionButtons[i].addEventListener("change", (event) => {
             if (event.target.value === "1") {
                 gameList = words
+                difficulty = "words"
             } else {
                 gameList = sentences
+                difficulty = "sentences"
             }
         })
     }
