@@ -1,11 +1,124 @@
-.img-holder-card {
-    width: 25%;
-    border: solid black 1vw;
-
-    padding: max(1vw, 1vh);
+// Reset
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.img-holder-card img {
+
+/********************************************************************************/
+/*Colors for dragons' races*/
+/********************************************************************************/
+.race-yzzil * {
+    border-color: inherit;
+}
+
+.race-yggi * {
+    border-color: inherit;
+}
+
+.race-ouros * {
+    border-color: inherit;
+}
+
+.race-yzzil {
+    border: solid #830002 1vw;
+    background-color: goldenrod;
+}
+
+.race-ouros {
+    border: solid #0E1CB9 1vw;
+    background-color: #66ccff;
+}
+
+.race-yggi {
+    border: solid #005500 1vw;
+    background-color: #63C752;
+}
+
+
+/********************************************************************************/
+/*General settings*/
+/********************************************************************************/
+h2 {
+    margin: 1vw;
+}
+
+p {
+    margin: 0.5vw;
+}
+
+button {
+    margin: 0.5vw;
+    padding: 0.5vw;
+
+    border: solid black;
+    border-radius: 30%;
+}
+
+.img-holder-card {
+    width: 25%;
+    padding: max(1vw, 1vh);
+    text-align: center;
+} 
+  
+
+/********************************************************************************/
+/*Image*/
+/********************************************************************************/
+img {
     width: 90%;
-    border: solid black 1vw;
+    margin-top: 0.5vw;
+
+    border: solid 1vw;
+}
+
+
+/********************************************************************************/
+/*Description accordion*/
+/********************************************************************************/
+.accordion {
+    width: 90%;
+    margin: 1vw;
+    border: none;
+
+    color: white;
+}
+
+.race-yzzil .accordion {
+    background-color: #830002;
+}
+
+.race-yggi .accordion{
+    background-color: #005500;
+}
+
+.race-ouros .accordion{
+    background-color: #0E1CB9;
+}
+
+.accordion-header {
+    cursor: pointer;
+    text-align: center;
+    padding: 0.5vw;
+}
+
+.accordion-content {
+    padding: 0.5vw;
+    padding-top: 0;
+
+}
+
+/********************************************************************************/
+/*Buttons*/
+/********************************************************************************/
+button.voted-like {
+    background-color: lightgreen;
+}
+  
+button.voted-dislike {
+    background-color: lightcoral;
+}
+
+button.default {
+    background-color: grey;
 }
