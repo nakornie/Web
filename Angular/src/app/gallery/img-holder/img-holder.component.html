@@ -1,25 +1,25 @@
-<div class="img-holder-card" [ngClass]="raceClass">
-    <h2>{{ title }}</h2>
+<div class="img-holder-card" [ngClass]="imgHolder.raceClass">
+    <h2>{{ imgHolder.title }}</h2>
 
-    <img [src]="imgUrl" [alt]="title" >
+    <img [src]="imgHolder.imgUrl" [alt]="imgHolder.title" >
 
     <div class="accordion">
         <div class="accordion-header" (click)="toggleAccordion()">
             <h2>Description</h2>
         </div>
         <div class="accordion-content" *ngIf="isAccordionOpen">
-            <p>{{ description }}</p>
-            <p>Oeuvre achevée le {{ createdAt }}</p>
+            <p>{{ imgHolder.description }}</p>
+            <p>Oeuvre achevée le {{ imgHolder.createdAt }}</p>
         </div>
     </div>
 
-    <p>💜 : {{ totalVotes }}</p>
+    <p>💜 : {{ imgHolder.totalVotes }}</p>
     <p>
         <button [ngClass]="buttonClass" (click)="onLike()">👍🏻</button> 
-        {{ ups }}
+        {{ imgHolder.ups }}
     </p>
     <p>
         <button [ngClass]="buttonClass" (click)="onDislike()">👎🏻</button> 
-        {{ downs }}
+        {{ imgHolder.downs }}
     </p>
 </div>
