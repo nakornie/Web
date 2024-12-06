@@ -1,6 +1,7 @@
 export class ImgHolder {
     ups = 0;
     downs = 0;
+    isFavorite = false;
     voteState: 'none' | 'like' | 'dislike' = 'none';
 
     raceMap = new Map<string, string>([
@@ -15,8 +16,10 @@ export class ImgHolder {
         public imgUrl: string,
         public title: string,
         public description: string,
+        public race: 'Yzzil' | 'Yggi' | 'Ouros',
         public createdAt: string,
-        public race: 'Yzzil' | 'Yggi' | 'Ouros'
+        public imaginedBy: string,
+        public drawnBy: string
     ) {}
 
 
@@ -55,5 +58,9 @@ export class ImgHolder {
             this.downs--;
         }
         this.voteState = 'none';
+    }
+
+    toggleFavoriteState() {
+        this.isFavorite = !this.isFavorite;
     }
 }

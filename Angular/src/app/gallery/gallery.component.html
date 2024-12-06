@@ -2,7 +2,10 @@
 <div class="gallery">
     <app-img-holder
         *ngFor="let holder of imgHolders"
-        [imgHolder]="holder">
-    </app-img-holder>
+        [imgHolder]="holder"
+        [isFavorite]="isFavorite(holder)"
+        (favoriteSelected)="setFavorite(holder)"
+        (scoreChanged)="reorderImgHolders()">
+  </app-img-holder>
 </div>
   

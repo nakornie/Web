@@ -1,6 +1,12 @@
 <div class="img-holder-card" [ngClass]="imgHolder.raceClass">
     <h2>{{ imgHolder.title }}</h2>
 
+    <button 
+        class="favorite-button" 
+        (click)="onCrowned()" 
+        [ngClass]="{'favorite-active': isFavorite}">
+    👑
+  </button>
     <img [src]="imgHolder.imgUrl" [alt]="imgHolder.title" >
 
     <div class="accordion">
@@ -9,11 +15,16 @@
         </div>
         <div class="accordion-content" *ngIf="isAccordionOpen">
             <p>{{ imgHolder.description }}</p>
-            <p>Oeuvre achevée le {{ imgHolder.createdAt }}</p>
+
+            <div class="description-section">
+                <p>Oeuvre achevée le {{ imgHolder.createdAt }}</p>
+                <p>Imaginée par {{ imgHolder.imaginedBy }}</p>
+                <p>Dessinée par {{ imgHolder.drawnBy }}</p>
+            </div>
         </div>
     </div>
 
-    <p>💜 : {{ imgHolder.totalVotes }}</p>
+    <p> 💜 : {{ imgHolder.totalVotes }}</p>
     <p>
         <button [ngClass]="buttonClass" (click)="onLike()">👍🏻</button> 
         {{ imgHolder.ups }}

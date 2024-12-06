@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ImgHolder } from './img-holder.model';
 
@@ -13,6 +13,10 @@ import { ImgHolder } from './img-holder.model';
 
 export class ImgHolderComponent implements OnInit {
   @Input() imgHolder!: ImgHolder;
+  @Input() isFavorite: boolean = false; // Indique si c'est le favori
+  @Output() favoriteSelected = new EventEmitter<void>();
+  @Output() scoreChanged = new EventEmitter<void>();
+
 
   isAccordionOpen: boolean = false;
 
@@ -31,6 +35,14 @@ export class ImgHolderComponent implements OnInit {
     return this.buttonTypeMap.get(this.imgHolder.voteState) || '';
   }
 
+  get isFavoriteImg(): string {
+    return this.imgHolder.isFavorite? "favoriteImg" : "default";
+  }
+
+  onCrowned() {
+    this.favoriteSelected.emit();
+    this.scoreChanged.emit();
+  }
 
   onDislike() {
     if (this.imgHolder.voteState === 'dislike') {
@@ -38,6 +50,7 @@ export class ImgHolderComponent implements OnInit {
     } else {
       this.imgHolder.changeVote('dislike');
     }
+    this.scoreChanged.emit();
   }
 
   onLike() {
@@ -46,6 +59,7 @@ export class ImgHolderComponent implements OnInit {
     } else {
       this.imgHolder.changeVote('like');
     }
+    this.scoreChanged.emit();
   }
 
   toggleAccordion(): void {
