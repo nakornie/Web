@@ -1,11 +1,13 @@
-<!-- gallery.component.html -->
+<div *ngIf="favoriteImg" class="favorite-preview">
+    <h2>Favori sélectionné</h2>
+    <img [src]="favoriteImg.imgUrl" [alt]="favoriteImg.title" />
+</div>
+
 <div class="gallery">
     <app-img-holder
         *ngFor="let holder of imgHolders"
         [imgHolder]="holder"
-        [isFavorite]="isFavorite(holder)"
-        (favoriteSelected)="setFavorite(holder)"
-        (scoreChanged)="reorderImgHolders()">
-  </app-img-holder>
+        (favoriteSelected)="imgHolderService.setFavorite(holder)"
+        (scoreChanged)="imgHolderService.reorderImgHolders()">
+    </app-img-holder>
 </div>
-  
