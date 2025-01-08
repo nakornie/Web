@@ -1,0 +1,29 @@
+@import '../../styles';
+
+
+header {
+    background-color: $primary-color;
+    color: white;
+    text-align: center;
+    padding-top: 1vw;
+    padding-bottom: 0.5vw;
+}
+
+nav {
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    padding: 10px;
+}
+
+nav a:hover {
+    background-color: white;
+    color: $primary-color;
+    border-radius: 33px;
+}

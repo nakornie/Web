@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ImgHolder } from './img-holder.model';
 import { ImgHolderService } from '../../services/img-holder.service';
@@ -14,7 +14,6 @@ import { ImgHolderService } from '../../services/img-holder.service';
 
 export class ImgHolderComponent implements OnInit {
   @Input() imgHolder!: ImgHolder;
-  // @Input() isFavorite: boolean = false; // Indique si c'est le favori
 
   isAccordionOpen: boolean = false;
 
@@ -28,7 +27,10 @@ export class ImgHolderComponent implements OnInit {
   // Initialisation
   ngOnInit(): void {}
 
-  constructor(private imgHolderService: ImgHolderService) {}
+  constructor(
+    private imgHolderService: ImgHolderService,
+    private router: Router
+  ) {}
 
 
   // Getters and setters
