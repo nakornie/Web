@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ImgHolder } from '../gallery/img-holder/img-holder.model';
-import { IMG_HOLDERS } from '../gallery/img-holder/img-holder.data';
+import { ImgHolder } from '../components/img-holder/img-holder.model';
+import { IMG_HOLDERS } from '../components/img-holder/img-holder.data';
 
 
 @Injectable({
@@ -10,7 +10,6 @@ import { IMG_HOLDERS } from '../gallery/img-holder/img-holder.data';
 export class ImgHolderService {
   imgHolders: ImgHolder[] = IMG_HOLDERS;
   private favoriteImgHolder: ImgHolder | null = null;
-
 
   // Getters and setters
   get favoriteImg() : null | ImgHolder {
@@ -48,5 +47,9 @@ export class ImgHolderService {
     return this.favoriteImgHolder === holder;
   }
 
+  getImgHolderById(id: string | null): ImgHolder | null {
+    if (!id) return null; // Gestion du cas où l'id est null
+    return this.imgHolders.find(holder => holder.id === id) || null;
+  }  
   
 }

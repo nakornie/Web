@@ -21,6 +21,10 @@
                 <p>Imaginée par {{ imgHolder.imaginedBy }}</p>
                 <p>Dessinée par {{ imgHolder.drawnBy }}</p>
             </div>
+
+            <button [routerLink]="['/single-img', imgHolder.id]">
+                Voir
+            </button>
         </div>
     </div>
 

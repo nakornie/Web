@@ -1,0 +1,46 @@
+@import 'variables.scss';
+
+/********************************************************************************/
+/*Dragons' cards' colors*/
+/********************************************************************************/
+.race-yzzil * {
+    border-color: inherit;
+}
+
+.race-yggi * {
+    border-color: inherit;
+}
+
+.race-ouros * {
+    border-color: inherit;
+}
+
+.race-yzzil {
+    border: solid $yzzil-border 1vw;
+    background-color: $yzzil-bg;
+}
+
+.race-ouros {
+    border: solid $ouros-border 1vw;
+    background-color: $ouros-bg;
+}
+
+.race-yggi {
+    border: solid $yggi-border 1vw;
+    background-color: $yggi-bg;
+}
+
+/********************************************************************************/
+/*Dragons' cards' accordion*/
+/********************************************************************************/
+.race-yzzil .accordion {
+    background-color: $yzzil-border;
+}
+
+.race-yggi .accordion{
+    background-color: $yggi-border;
+}
+
+.race-ouros .accordion{
+    background-color: $ouros-border;
+}

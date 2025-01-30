@@ -1,38 +1,10 @@
+@import '../../../../../styles.scss';
+@import '../../../../styles/dragon-cards.scss';
+
 // Reset
 * {
     margin: 0;
     padding: 0;
-}
-
-
-/********************************************************************************/
-/*Colors for dragons' races*/
-/********************************************************************************/
-.race-yzzil * {
-    border-color: inherit;
-}
-
-.race-yggi * {
-    border-color: inherit;
-}
-
-.race-ouros * {
-    border-color: inherit;
-}
-
-.race-yzzil {
-    border: solid #830002 1vw;
-    background-color: goldenrod;
-}
-
-.race-ouros {
-    border: solid #0E1CB9 1vw;
-    background-color: #66ccff;
-}
-
-.race-yggi {
-    border: solid #005500 1vw;
-    background-color: #63C752;
 }
 
 
@@ -83,18 +55,6 @@ img {
     border: none;
 
     color: white;
-}
-
-.race-yzzil .accordion {
-    background-color: #830002;
-}
-
-.race-yggi .accordion{
-    background-color: #005500;
-}
-
-.race-ouros .accordion{
-    background-color: #0E1CB9;
 }
 
 .accordion-header {

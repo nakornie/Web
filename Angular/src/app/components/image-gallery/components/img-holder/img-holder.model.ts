@@ -19,7 +19,9 @@ export class ImgHolder {
         public race: 'Yzzil' | 'Yggi' | 'Ouros',
         public createdAt: string,
         public imaginedBy: string,
-        public drawnBy: string
+        public drawnBy: string,
+        public history: string,
+        public id: string = crypto.randomUUID().substring(0, 8)
     ) {}
 
 

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router, RouterModule } from '@angular/router';
+
 import { ImgHolder } from './img-holder.model';
 import { ImgHolderService } from '../../services/img-holder.service';
 
@@ -7,7 +9,10 @@ import { ImgHolderService } from '../../services/img-holder.service';
 @Component({
   selector: 'app-img-holder',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    RouterModule
+  ],
   templateUrl: './img-holder.component.html',
   styleUrls: ['./img-holder.component.scss']
 })
@@ -28,7 +33,7 @@ export class ImgHolderComponent implements OnInit {
   ngOnInit(): void {}
 
   constructor(
-    private imgHolderService: ImgHolderService,
+    private imgHolderService: ImgHolderService, 
     private router: Router
   ) {}
 

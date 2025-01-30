@@ -1,23 +1,23 @@
-// gallery.component.ts
+// image-gallery.component.ts
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ImgHolder } from './img-holder/img-holder.model';
-import { ImgHolderComponent } from './img-holder/img-holder.component'; 
-import { ImgHolderService } from '../services/img-holder.service';
+import { ImgHolder } from '../img-holder/img-holder.model';
+import { ImgHolderComponent } from '../img-holder/img-holder.component'; 
+import { ImgHolderService } from '../../services/img-holder.service';
 
 
 @Component({
-  selector: 'app-gallery',
+  selector: 'app-image-gallery',
   standalone: true,
   imports: [
     CommonModule,
     ImgHolderComponent,
   ],
-  templateUrl: './gallery.component.html',
-  styleUrls: ['./gallery.component.scss'],
+  templateUrl: './image-gallery.component.html',
+  styleUrls: ['./image-gallery.component.scss'],
 })
 
-export class GalleryComponent {
+export class ImageGalleryComponent {
   constructor(public imgHolderService: ImgHolderService) {}
 
   // Getters and setters

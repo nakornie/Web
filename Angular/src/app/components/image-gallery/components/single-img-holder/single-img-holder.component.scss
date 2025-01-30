@@ -1,0 +1,82 @@
+@import '../../../../../styles.scss';
+@import '../../../../styles/dragon-cards.scss';
+
+// Reset
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/********************************************************************************/
+/*General settings*/
+/********************************************************************************/
+h2 {
+    margin: 1vw;
+}
+
+p {
+    margin: 0.5vw;
+}
+
+.img-holder-card {
+    position: relative;
+
+    width: 80%;
+    box-sizing: border-box;
+    padding: max(1vw, 1vh);
+
+    display: flex;
+    flex-direction: column; /* Dispose les enfants en colonne */
+    align-items: center;    /* Centre les enfants sur l'axe vertical */
+    justify-content: center;
+
+    text-align: center;
+} 
+  
+
+/********************************************************************************/
+/*Image*/
+/********************************************************************************/
+img {
+    width: 90%;
+    margin-top: 0.5vw;
+
+    border: solid 1vw;
+}
+
+
+/********************************************************************************/
+/*Description accordion*/
+/********************************************************************************/
+.accordion {
+    width: 90%;
+    margin: 1vw;
+    border: none;
+
+    color: white;
+}
+
+.accordion-header {
+    cursor: pointer;
+    text-align: center;
+    padding: 1vw;
+}
+
+.accordion-content {
+    padding: 1vw;
+    padding-top: 0;
+
+    font-size: 1.2rem;
+
+}
+
+/********************************************************************************/
+/*Buttons*/
+/********************************************************************************/
+button {
+    margin: 0.5vw;
+    padding: 0.5vw;
+
+    border: solid black;
+    border-radius: 30%;
+}
