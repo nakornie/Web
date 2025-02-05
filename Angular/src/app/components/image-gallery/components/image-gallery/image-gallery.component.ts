@@ -26,7 +26,7 @@ export class ImageGalleryComponent {
   }
 
   get favoriteImg(): ImgHolder | null {
-    return this.imgHolderService.favoriteImg;
+    return this.imgHolderService.favoriteImageHolder;
   }
 
   // Methodes

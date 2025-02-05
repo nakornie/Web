@@ -1,5 +1,18 @@
 $primary-color: #960151;
+$secondary-color: #FFEAFD;
+
+
+// Reset
+* {
+    margin: 0;
+    padding: 0;
+}
 
 p {
     white-space: pre-line;
+}
+
+.toCenterContent {
+    display: flex;
+    justify-content: center;
 }

@@ -1,21 +1,16 @@
 @import '../../../../../styles.scss';
 @import '../../../../styles/dragon-cards.scss';
 
-// Reset
-* {
-    margin: 0;
-    padding: 0;
-}
-
 /********************************************************************************/
 /*General settings*/
 /********************************************************************************/
 h2 {
-    margin: 1vw;
+    font-size: 1.9rem;
+    margin: 1.5vw;
 }
 
 p {
-    margin: 0.5vw;
+    margin: 1vw;
 }
 
 .img-holder-card {

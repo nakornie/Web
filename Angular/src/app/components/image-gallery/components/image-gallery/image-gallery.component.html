@@ -1,8 +1,3 @@
-<div *ngIf="favoriteImg" class="favorite-preview">
-    <h2>Favori sélectionné</h2>
-    <img [src]="favoriteImg.imgUrl" [alt]="favoriteImg.title" />
-</div>
-
 <div class="image-gallery">
     <app-img-holder
         *ngFor="let holder of imgHolders"

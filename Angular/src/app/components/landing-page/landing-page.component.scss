@@ -1,0 +1,28 @@
+@import '../../../styles.scss';
+
+.landing-page {
+    width: 100vw;
+    height: 60vh;
+
+    background-color: $secondary-color;
+
+    display: flex;
+    flex-direction: row;
+    //align-content: space-evenly;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.gallery-button {
+    width: 30vw;
+    
+    padding: 2vw;
+    border: solid 1vw $primary-color;
+
+    text-align: center;
+}
+
+.gallery-button img {
+    width: 100%;
+}

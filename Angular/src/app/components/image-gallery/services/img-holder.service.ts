@@ -12,9 +12,14 @@ export class ImgHolderService {
   private favoriteImgHolder: ImgHolder | null = null;
 
   // Getters and setters
-  get favoriteImg() : null | ImgHolder {
+  get favoriteImageHolder() : null | ImgHolder {
     return this.favoriteImgHolder;
   }
+
+  get favoriteImg(): string | null {
+    return this.favoriteImgHolder?.imgUrl ?? null;
+  }
+  
 
   // Retourne la liste des images
   getImgHolders(): ImgHolder[] {
