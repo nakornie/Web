@@ -1,4 +1,4 @@
-@import '../../../styles.scss';
+@use '../../styles/variables.scss' as *;
 
 
 header {
@@ -11,19 +11,31 @@ header {
 
 nav {
     padding: 1vw;
-    display: flex;
-    justify-content: space-around;
 }
 
-nav a {
+ul {
+    list-style-type : none;
+    display: flex;
+    justify-content: space-around;
+  }
+
+li {
+    display : inline-block;
     color: white;
-    text-decoration: none;
     font-size: 1.5em;
     padding: 10px;
 }
 
-nav a:hover {
+li:hover {
     background-color: white;
-    color: $primary-color;
     border-radius: 33px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+li:hover a {
+    color: $primary-color;
 }

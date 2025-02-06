@@ -1,4 +1,4 @@
-import { ImgHolder } from './img-holder.model';
+import { ImgHolder } from '../components/img-holder/img-holder.model';
 
 export const IMG_HOLDERS: ImgHolder[] = [
     new ImgHolder(

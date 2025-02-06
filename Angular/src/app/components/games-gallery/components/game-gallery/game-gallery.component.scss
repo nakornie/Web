@@ -1,0 +1,25 @@
+@use '../../../../styles/variables.scss' as *;
+
+
+h1 {
+    margin: 2vw;
+}
+
+.game-gallery {
+    background-color: $secondary-color;
+    overflow: hidden;
+}
+
+.game-section {
+    height: fit-content;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    //gap: min(50%, 20px); 
+    gap: 5%;
+
+    padding: 20px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+}

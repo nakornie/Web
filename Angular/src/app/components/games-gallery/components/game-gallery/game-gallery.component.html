@@ -1,0 +1,14 @@
+<div class="game-gallery">
+    <div *ngFor="let category of categories">
+        <h1>{{ category | titlecase }}</h1>
+        <div class="game-section">
+            <app-game-button
+                *ngFor="let game of getGamesByCategory(category)"
+                [name]="game.name"
+                [source]="game.img"
+                [route]="game.route"
+                [categories]="game.categories">
+            </app-game-button>
+        </div>
+    </div>
+</div>

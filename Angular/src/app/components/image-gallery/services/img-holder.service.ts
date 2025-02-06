@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ImgHolder } from '../components/img-holder/img-holder.model';
-import { IMG_HOLDERS } from '../components/img-holder/img-holder.data';
+import { IMG_HOLDERS } from '../data/img-holder.data';
 
 
 @Injectable({

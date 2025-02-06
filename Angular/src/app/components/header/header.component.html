@@ -1,7 +1,18 @@
 <header>
-    <h1>Gallerie d'Images</h1>
+    <h1>Yggdrasil</h1>
     <nav>
-        <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-        <a routerLink="image-gallery" routerLinkActive="active">Gallery</a>
-    </nav>
+        <ul>
+          <li *ngIf="currentRoute !== ''">
+            <a routerLink="">Home</a>
+          </li>
+      
+          <li *ngIf="currentRoute === 'image-gallery' || currentRoute === 'game'">
+            <a routerLink="game-gallery">Games</a>
+          </li>
+      
+          <li *ngIf="currentRoute === 'game-gallery' || currentRoute === 'single-img'">
+            <a routerLink="image-gallery">Gallery</a>
+          </li>      
+        </ul>
+      </nav>
 </header>
