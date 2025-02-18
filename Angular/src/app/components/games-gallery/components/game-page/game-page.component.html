@@ -2,7 +2,9 @@
     <h1>{{ game?.name }}</h1>
 
     <div class="game-section">
-    
+        <ng-container *ngIf="gameComponent">
+            <ng-container *ngComponentOutlet="gameComponent"></ng-container>
+        </ng-container>
     </div>
     
     <div class="manual-section">
